@@ -1,0 +1,20 @@
+& > p {
+  max-width: 540px;
+  margin: 48px auto;
+  padding: 0 20px;
+  line-height: 145%;
+
+  &.has-drop-cap:first-letter {
+    font-size: 5.5em;
+  }
+  &.has-background {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+}
+
+.wp-block-columns {
+  max-width: 540px;
+  margin: 48px auto;
+  padding: 0 20px;
+}

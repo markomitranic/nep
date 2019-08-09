@@ -1,0 +1,25 @@
+.wp-block-image {
+  text-align: center;
+  margin: 48px auto;
+  max-width: 680px;
+
+  a {
+    img {
+      max-width: 100%;
+    }
+  }
+  figcaption {
+    line-height: 1.625rem;
+    font-size: 15px;
+    color: black;
+
+    &::after {
+      content: '';
+      width: 160px;
+      position: static;
+      display: block;
+      border-top: 1px solid;
+      margin: 10px auto;
+    }
+  }
+}

@@ -1,0 +1,29 @@
+version: "2"
+
+options:
+  verbose: true
+  max-attempt: 30
+syncs:
+  nep-mysql:
+    src: './mysql/datastore'
+    sync_strategy: 'unison'
+    sync_args: "-force newer"
+    sync_excludes: ['.DS_Store']
+  nep-project:
+    src: './../public'
+    sync_strategy: 'unison'
+    sync_args: "-force newer"
+    sync_excludes:
+      - './**/node_modules'
+      - '.DS_Store'
+      - '.git'
+      - '.idea'
+  nep-root:
+    src: './../'
+    sync_strategy: 'unison'
+    sync_args: "-force newer"
+    sync_excludes:
+      - './**/node_modules'
+      - '.DS_Store'
+      - '.git'
+      - '.idea'

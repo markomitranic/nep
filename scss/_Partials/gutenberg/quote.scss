@@ -1,0 +1,37 @@
+.wp-block-quote, .wp-block-pullquote {
+  margin: 48px auto;
+  max-width: 600px;
+
+  &.is-style-large {
+    max-width: 790px;
+
+    p {
+      font-size: 2rem;
+      max-width: 790px;
+      line-height: 3rem;
+      text-align: left;
+      border: none;
+    }
+  }
+
+  p {
+    border: 1px solid black;
+    padding: 25px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 1.25rem;
+    line-height: 2rem;
+    font-style: italic;
+    max-width: 600px;
+
+    a {
+      font-style: italic;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+  cite {
+    text-align: right;
+    padding: 10px 10px;
+  }
+}

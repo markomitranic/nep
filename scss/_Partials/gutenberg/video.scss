@@ -1,0 +1,54 @@
+.wp-block-video {
+  text-align: center;
+  margin: 48px auto;
+  max-width: 680px;
+}
+.wp-block-embed {
+  text-align: center;
+  margin: 48px auto;
+  max-width: 680px;
+
+  @media screen and (max-width: 720px){
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  @media screen and (max-width: 650px){
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  // Complicated fix to override default WP positioning which breaks aspect ratio.
+  .wp-block-embed__wrapper {
+    height: calc((680px / 16) * 9);
+
+    @media screen and (max-width: 720px){
+      height: calc((100vw / 16) * 8);
+    }
+
+    .flex-video {
+      position: static;
+      padding: 0;
+      height: 100%;
+
+      iframe {
+        position: static;
+      }
+    }
+  }
+
+  figcaption {
+    line-height: 1.625rem;
+    font-size: 15px;
+    color: black;
+
+    &::after {
+      content: '';
+      width: 160px;
+      position: static;
+      display: block;
+      border-top: 1px solid;
+      margin: 10px auto;
+    }
+  }
+
+}

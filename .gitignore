@@ -1,0 +1,13 @@
+node_modules
+/public/wp-content/themes/Nep/css
+/public/wp-content/themes/Nep/js
+/public/wp-content/uploads/cache/*
+
+wp-config.php
+
+.DS_Store
+.ini
+
+public/wp-content/uploads/ssa/ics/*
+public/wp-content/uploads/wc-logs/*
+public/wp-content/uploads/GeoLite2-Country.mmdb

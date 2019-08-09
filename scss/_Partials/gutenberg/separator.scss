@@ -1,0 +1,10 @@
+.wp-block-separator {
+  max-width: 240px;
+  margin: 48px auto;
+  padding: 0 20px;
+  border-color: #000000;
+
+  &.is-style-wide {
+    max-width: 540px;
+  }
+}
