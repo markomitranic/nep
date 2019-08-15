@@ -1,0 +1,115 @@
+#header {
+  max-width: 1315px;
+  margin: 0 auto;
+
+  #header-menu {
+    position: relative;
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+    border-bottom: 2px solid black;
+
+    @include line-left;
+    @include line-right;
+
+    ul {
+      height: auto;
+      min-height: 135px;
+      padding: 5px 20px;
+      box-sizing: border-box;
+      margin: 0;
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: space-around;
+      align-items: center;
+      list-style-type: none;
+
+      li {
+        display: block;
+
+        a {
+          font-style: normal;
+          font-weight: bold;
+          font-size: 23px;
+          line-height: 38px;
+          text-decoration: none;
+          color: black;
+          text-transform: uppercase;
+          padding: 5px 10px;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+}
+#masthead {
+  max-width: 1315px;
+  margin: 0 auto;
+
+  & > .wrapper {
+    position: relative;
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+    border-bottom: 2px solid black;
+    display: flex;
+    height: auto;
+    justify-content: space-between;
+    align-items: stretch;
+
+    @include line-left;
+    @include line-right;
+
+    #logo {
+      display: block;
+      border-right: 2px solid black;
+
+      a {
+        display: block;
+        text-align: center;
+        height: 100%;
+        width: 100%;
+
+        img {
+          width: 310px;
+          height: auto;
+          margin: 87px 35px;
+          vertical-align: middle;
+        }
+      }
+    }
+
+    #page-title {
+      width: auto;
+      flex: 1;
+      padding: 20px 80px;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+
+      &:after {
+        content: "";
+        display: block;
+        width: 40px;
+        height: 40px;
+        background-image: url($rootDir + "assets/global/plus-sign.svg");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center center;
+        position: absolute;
+        bottom: 30px;
+        right: 30px;
+      }
+
+      h1 {
+        font-style: normal;
+        font-weight: bold;
+        font-size: 50px;
+        line-height: 60px;
+        margin: 0;
+        display: block;
+      }
+    }
+  }
+}

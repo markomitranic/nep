@@ -1,0 +1,18 @@
+/*
+Theme Name: Nep Theme
+Text Domain: nep-theme
+
+Theme URI: http://github.com/markomitranic
+Author: Marko Mitranic
+Author URI: http://github.com/markomitranic
+Description: A special theme created for Nelt Edukativni Program and designed by Dragana Krtinić.
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+
+This theme, like WordPress, is licensed under the GPL.
+*/
+
+body {
+	background-color: white;
+}
