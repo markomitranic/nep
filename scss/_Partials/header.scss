@@ -1,6 +1,5 @@
 #header {
-  max-width: 1315px;
-  margin: 0 auto;
+  @include global-wrapper;
 
   #header-menu {
     position: relative;
@@ -23,6 +22,10 @@
       align-items: center;
       list-style-type: none;
 
+      @media (max-width: 1360px) {
+        flex-wrap: wrap;
+      }
+
       li {
         display: block;
 
@@ -36,6 +39,13 @@
           text-transform: uppercase;
           padding: 5px 10px;
 
+          @media (max-width: 1360px) {
+            font-size: 20px;
+          }
+          @media (max-width: 1160px) {
+            font-size: 23px;
+          }
+
           &:hover {
             text-decoration: underline;
           }
@@ -45,8 +55,7 @@
   }
 }
 #masthead {
-  max-width: 1315px;
-  margin: 0 auto;
+  @include global-wrapper;
 
   & > .wrapper {
     position: relative;
@@ -64,18 +73,26 @@
     #logo {
       display: block;
       border-right: 2px solid black;
+      width: 29%;
+      min-height: 350px;
 
       a {
         display: block;
         text-align: center;
         height: 100%;
         width: 100%;
+        position: relative;
 
         img {
-          width: 310px;
+          width: 100%;
           height: auto;
-          margin: 87px 35px;
+          padding: 0 35px;
           vertical-align: middle;
+          box-sizing: border-box;
+          position: absolute;
+          top: 50%;
+          left: 0;
+          transform: translateY(-50%);
         }
       }
     }
@@ -87,6 +104,10 @@
       display: flex;
       justify-content: flex-start;
       align-items: center;
+
+      @media (max-width: 930px) {
+        padding: 20px 50px;
+      }
 
       &:after {
         content: "";
@@ -100,6 +121,13 @@
         position: absolute;
         bottom: 30px;
         right: 30px;
+
+        @media (max-width: 930px) {
+          width: 30px;
+          height: 30px;
+          bottom: 25px;
+          right: 25px;
+        }
       }
 
       h1 {
@@ -109,6 +137,19 @@
         line-height: 60px;
         margin: 0;
         display: block;
+
+        @media (max-width: 1160px) {
+          font-size: 40px;
+          line-height: 60px;
+        }
+        @media (max-width: 930px) {
+          font-size: 30px;
+          line-height: 50px;
+        }
+        @media (max-width: 700px) {
+          font-size: 26px;
+          line-height: 40px;
+        }
       }
     }
   }

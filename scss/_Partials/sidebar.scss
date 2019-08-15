@@ -1,7 +1,7 @@
 #content {
   aside {
     border-right: 2px solid black;
-    width: 380px;
+    width: 29%;
 
     .description {
       border-bottom: 2px solid black;
@@ -13,6 +13,22 @@
         font-size: 58px;
         line-height: 58px;
         padding: 55px 25px;
+
+        @media (max-width: 1320px) {
+          font-size: 48px;
+        }
+        @media (max-width: 1150px) {
+          font-size: 38px;
+          line-height: 38px;
+          padding: 35px 15px;
+        }
+        @media (max-width: 960px) {
+          font-size: 30px;
+          padding: 15px;
+        }
+
+        POSLEDNJE STO SAM RADIO JE DA SAM GLEDAO KAD ASE PRELAMA SIDEBAR
+        NASAO SAM DA JE NEGDE OKO 1050 ALI ZELIM DA GA SMANJIM JOS PA TEK OKO 960 da ga prelomim
       }
     }
     .sidebar {
@@ -25,8 +41,17 @@
         margin: 0;
         padding: 25px;
 
+        @media (max-width: 1150px) {
+          padding: 15px;
+        }
+
         li {
           margin-bottom: 25px;
+
+          @media (max-width: 1150px) {
+            margin-bottom: 15px;
+          }
+
           a {
 
           }

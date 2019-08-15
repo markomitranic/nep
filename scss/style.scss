@@ -3,6 +3,7 @@ $rootDir: '/wp-content/themes/Nep/';
 @import url('https://fonts.googleapis.com/css?family=Arimo:400,400i,700,700i&display=swap&subset=cyrillic-ext,latin-ext');
 
 // Custom Styles
+@import "_Partials/mixins";
 @import "_Partials/global";
 @import "_Partials/header";
 @import "_Partials/footer";
