@@ -13,6 +13,10 @@
 
 <header id="header">
     <nav id="header-menu">
+        <div id="mobile-menu-button">
+            <span></span>
+            <span></span>
+        </div>
         <ul>
             <li><a href="" title="">Početna</a></li>
             <li><a href="">O Nama</a></li>

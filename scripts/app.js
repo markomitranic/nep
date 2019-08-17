@@ -1,4 +1,4 @@
 /* eslint-disable no-unused-vars */
 
 /* Domain */
-import './domain/homepage-slider';
+import './domain/mobile-menu';

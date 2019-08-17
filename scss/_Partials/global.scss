@@ -5,6 +5,12 @@ body {
   font-family: 'Arimo', sans-serif;
   overflow-x: hidden;
 
+  &.no-scroll {
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+  }
+
   #content {
     @include global-wrapper;
 
