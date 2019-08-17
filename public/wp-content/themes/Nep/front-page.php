@@ -4,7 +4,7 @@
     <div class="wrapper">
         <div id="logo">
             <a href="<?php echo home_url(); ?>" title="Go to the front page">
-                <img src="<?=get_template_directory_uri()?>/assets/global/NEP Logo.svg" alt="NEP Logo">
+                <?=file_get_contents(get_template_directory() . '/assets/global/NEP Logo.svg')?>
             </a>
         </div>
         <div id="page-title">
@@ -25,22 +25,22 @@
 				</li>
 				<li>
 					<a href="#" target="_blank" rel="nofollow" title="#">
-						<img src="<?=get_template_directory_uri()?>/assets/empties/Asset 3.svg" alt="A cool looking image">
+						<img src="<?=get_template_directory_uri()?>/assets/empties/Asset <?=rand(1,9)?>.svg" alt="A cool looking image">
 					</a>
 				</li>
 				<li>
 					<a href="#" target="_blank" rel="nofollow" title="#">
-						<img src="<?=get_template_directory_uri()?>/assets/empties/Asset 5.svg" alt="A cool looking image">
+						<img src="<?=get_template_directory_uri()?>/assets/empties/Asset <?=rand(1,9)?>.svg" alt="A cool looking image">
 					</a>
 				</li>
 				<li>
 					<a href="#" target="_blank" rel="nofollow" title="#">
-						<img src="<?=get_template_directory_uri()?>/assets/empties/Asset 4.svg" alt="A cool looking image">
+						<img src="<?=get_template_directory_uri()?>/assets/empties/Asset <?=rand(1,9)?>.svg" alt="A cool looking image">
 					</a>
 				</li>
 				<li>
 					<a href="#" target="_blank" rel="nofollow" title="#">
-						<img src="<?=get_template_directory_uri()?>/assets/empties/Asset 2.svg" alt="A cool looking image">
+						<img src="<?=get_template_directory_uri()?>/assets/empties/Asset <?=rand(1,9)?>.svg" alt="A cool looking image">
 					</a>
 				</li>
 			</ul>
@@ -53,7 +53,11 @@
 		</div>
 	</aside>
 	<main>
-		Jednogodišnji interdisciplinarni eksperimentalni obrazovni program za studente različitih fakulteta utemeljen na principima saradnje, timskog rada, dijaloga, razmene, otvorenosti i povezivanja različitih znanja, veština i kapaciteta.
+
+        <div id="intro">
+            <p>Jednogodišnji interdisciplinarni eksperimentalni obrazovni program za studente različitih fakulteta utemeljen na principima saradnje, timskog rada, dijaloga, razmene, otvorenosti i povezivanja različitih znanja, veština i kapaciteta.</p>
+        </div>
+
 	</main>
 </div>
 
