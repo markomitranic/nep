@@ -22,8 +22,20 @@ body {
     align-items: stretch;
     flex-wrap: nowrap;
 
+    @media (max-width: 820px) {
+      flex-wrap: wrap;
+    }
+
     main {
       flex: 1;
+
+      @media (max-width: 820px) {
+        order: 1;
+        width: 100%;
+        border-bottom: 2px solid black;
+        padding: 40px 0;
+        box-sizing: border-box;
+      }
     }
   }
 }

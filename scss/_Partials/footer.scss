@@ -15,9 +15,21 @@
 
       @include global-wrapper;
 
+      @media (max-width: 640px) {
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        height: auto;
+      }
+
       .logo {
         padding-left: 10px;
         width: 310px;
+
+        @media (max-width: 640px) {
+          width: auto;
+          margin: 40px auto 20px auto;
+        }
 
         img {
           height: auto;
@@ -26,6 +38,10 @@
       }
       .details {
         flex: 1;
+
+        @media (max-width: 640px) {
+          text-align: center;
+        }
 
         h2 {
           text-transform: uppercase;
@@ -58,16 +74,36 @@
 
     @include global-wrapper;
 
+    @media (max-width: 990px) {
+      justify-content: flex-start;
+      align-items: center;
+      flex-direction: column;
+      padding-bottom: 100px;
+    }
+
     .copyright {
       width: 350px;
       padding-left: 30px;
       box-sizing: border-box;
+
+      @media (max-width: 990px) {
+        width: auto;
+        padding: 0;
+        margin: 100px auto 20px auto;
+      }
 
       p {
         font-style: normal;
         font-weight: normal;
         font-size: 24px;
         line-height: 70px;
+
+        @media (max-width: 990px) {
+          text-align: center;
+          line-height: 20px;
+          font-size: 16px;
+          margin: 0;
+        }
       }
     }
     ul.logos {
@@ -80,8 +116,18 @@
       justify-content: flex-end;
       flex-wrap: nowrap;
 
+      @media (max-width: 640px) {
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+      }
+
       li {
         margin: 0 22px;
+
+        @media (max-width: 640px) {
+          margin: 20px auto;
+        }
 
         a {
           display: block;
