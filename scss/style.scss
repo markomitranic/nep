@@ -2,10 +2,16 @@
 $rootDir: '/wp-content/themes/Nep/';
 @import url('https://fonts.googleapis.com/css?family=Arimo:400,400i,700,700i&display=swap&subset=cyrillic-ext,latin-ext');
 
-// Custom Styles
+// Vendor
+@import 'node_modules/tiny-slider/src/tiny-slider.scss';
+
+// Global Styles
 @import "_Partials/mixins";
 @import "_Partials/global";
 @import "_Partials/header";
 @import "_Partials/footer";
 @import "_Partials/sidebar";
 @import "_Partials/gutenberg/post-content";
+
+// Pages
+@import "_Partials/pages/front-page";

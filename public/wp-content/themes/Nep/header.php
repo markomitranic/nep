@@ -9,7 +9,7 @@
 	<?php wp_head(); ?>
 	<?php get_template_part('headers'); ?>
 </head>
-<body>
+<body <?php body_class(); ?>>
 
 <header id="header">
     <nav id="header-menu">
