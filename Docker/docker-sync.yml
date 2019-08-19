@@ -6,13 +6,11 @@ options:
 syncs:
   nep-mysql:
     src: './mysql/datastore'
-    sync_strategy: 'unison'
-    sync_args: "-force newer"
+    sync_strategy: 'native_osx'
     sync_excludes: ['.DS_Store']
   nep-project:
     src: './../public'
-    sync_strategy: 'unison'
-    sync_args: "-force newer"
+    sync_strategy: 'native_osx'
     sync_excludes:
       - './**/node_modules'
       - '.DS_Store'
@@ -20,8 +18,7 @@ syncs:
       - '.idea'
   nep-root:
     src: './../'
-    sync_strategy: 'unison'
-    sync_args: "-force newer"
+    sync_strategy: 'native_osx'
     sync_excludes:
       - './**/node_modules'
       - '.DS_Store'

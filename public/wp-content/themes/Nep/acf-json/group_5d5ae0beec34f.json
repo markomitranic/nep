@@ -1,0 +1,140 @@
+{
+    "key": "group_5d5ae0beec34f",
+    "title": "Sidebar Marketing",
+    "fields": [
+        {
+            "key": "field_5d5ae0e8ed23f",
+            "label": "Ads",
+            "name": "ads",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 0,
+            "max": 4,
+            "layout": "table",
+            "button_label": "Add Ad Slot",
+            "sub_fields": [
+                {
+                    "key": "field_5d5ae11eed240",
+                    "label": "Image",
+                    "name": "image",
+                    "type": "image",
+                    "instructions": "Image size should not be less than 400 in width.",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "30",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "preview_size": "thumbnail",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": ""
+                },
+                {
+                    "key": "field_5d5ae17aed241",
+                    "label": "Title",
+                    "name": "title",
+                    "type": "text",
+                    "instructions": "A title, explaining where the link will take visitors.",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "40",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "Visit art salon website.",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_5d5ae1b8ed242",
+                    "label": "Link",
+                    "name": "link",
+                    "type": "url",
+                    "instructions": "If you want to leave the link blank, just enter a # character.",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "30",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "http:\/\/nep.rs\/vesti"
+                }
+            ]
+        },
+        {
+            "key": "field_5d5ae69bf1e34",
+            "label": "Empty Slots",
+            "name": "empty_slots",
+            "type": "number",
+            "instructions": "Select a number of free slots in the sidebar. The unassigned places will just display a random graphic.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "100",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 4,
+            "placeholder": 4,
+            "prepend": "",
+            "append": "",
+            "min": 0,
+            "max": "",
+            "step": 1
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "sidebar-marketing"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "acf_after_title",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "permalink",
+        "the_content",
+        "excerpt",
+        "discussion",
+        "comments",
+        "revisions",
+        "slug",
+        "author",
+        "format",
+        "page_attributes",
+        "featured_image",
+        "categories",
+        "tags",
+        "send-trackbacks"
+    ],
+    "active": 1,
+    "description": "",
+    "modified": 1566238966
+}

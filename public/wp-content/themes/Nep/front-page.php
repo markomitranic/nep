@@ -1,57 +1,8 @@
 <?php get_header(); ?>
-
-<div id="masthead">
-    <div class="wrapper">
-        <div id="logo">
-            <a href="<?php echo home_url(); ?>" title="Go to the front page">
-                <?=file_get_contents(get_template_directory() . '/assets/global/NEP Logo.svg')?>
-            </a>
-        </div>
-        <div id="page-title">
-            <h1>Tehnologija / Umetnost / Nauka / Preduzetništvo / Aktivizam / Eksperiment / Inovacija</h1>
-        </div>
-    </div>
-</div>
+<?php get_template_part('partials/masthead'); ?>
 
 <div id="content">
-	<aside>
-		<div class="description">
-			<p><?= get_bloginfo('description'); ?></p>
-		</div>
-		<div class="sidebar">
-			<ul>
-				<li class="inactive">
-                    <img src="<?=get_template_directory_uri()?>/assets/empties/Asset <?=rand(1,9)?>.svg" alt="A cool looking image">
-				</li>
-				<li>
-					<a href="#" target="_blank" rel="nofollow" title="#">
-						<img src="<?=get_template_directory_uri()?>/assets/empties/Asset <?=rand(1,9)?>.svg" alt="A cool looking image">
-					</a>
-				</li>
-				<li>
-					<a href="#" target="_blank" rel="nofollow" title="#">
-						<img src="<?=get_template_directory_uri()?>/assets/empties/Asset <?=rand(1,9)?>.svg" alt="A cool looking image">
-					</a>
-				</li>
-				<li>
-					<a href="#" target="_blank" rel="nofollow" title="#">
-						<img src="<?=get_template_directory_uri()?>/assets/empties/Asset <?=rand(1,9)?>.svg" alt="A cool looking image">
-					</a>
-				</li>
-				<li>
-					<a href="#" target="_blank" rel="nofollow" title="#">
-						<img src="<?=get_template_directory_uri()?>/assets/empties/Asset <?=rand(1,9)?>.svg" alt="A cool looking image">
-					</a>
-				</li>
-			</ul>
-		</div>
-		<div class="social">
-			<ul>
-				<li><a href="">Vimeo</a></li>
-				<li><a href="">Instagram</a></li>
-			</ul>
-		</div>
-	</aside>
+    <?php get_template_part('partials/sidebar'); ?>
 	<main>
 
         <div id="intro">

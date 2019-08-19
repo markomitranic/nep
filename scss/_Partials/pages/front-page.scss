@@ -66,6 +66,7 @@ body.home {
           }
           &#news {
             background-color: #7F7A8F;
+            overflow: hidden;
 
             // Fixes for bad slider behavior wherein height would be set to auto.
             .tns-outer {

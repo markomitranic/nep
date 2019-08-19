@@ -40,6 +40,15 @@ remove_action('wp_head', 'wp_generator'); // Built-in Meta generator
 
 if( function_exists('acf_add_options_page') ) {
 	acf_add_options_page(array(
+		'page_title'  =>  'Sidebar Marketing',
+		'menu_title'  =>  'Sidebar Marketing',
+		'menu_slug'   =>  'sidebar-marketing',
+		'capability'  =>  'edit_posts',
+		'parent_slug' =>  'themes.php',
+		'position'    =>  false,
+		'icon_url'    =>  false
+	));
+	acf_add_options_page(array(
 		'page_title'  =>  'Template Options',
 		'menu_title'  =>  'Template Options',
 		'menu_slug'   =>  'template-options',
