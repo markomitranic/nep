@@ -1,6 +1,6 @@
 const superNova = {
-    movementLength: 30,
-    movementSpeed: 2,
+    movementLength: 70,
+    movementSpeed: 0.5,
     currentKey: 0,
     dancingElements: [],
 
