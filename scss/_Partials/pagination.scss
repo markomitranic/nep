@@ -1,0 +1,66 @@
+.navigation.pagination {
+  display: flex;
+  align-items: stretch;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  padding: 0 40px;
+
+  h2 {
+    display: none;
+  }
+  .nav-links {
+    .page-numbers {
+      display: inline-block;
+      background: #7f7a8f;
+      padding: 10px 15px;
+      color: black;
+      text-decoration: none;
+      font-size: 20px;
+      line-height: 20px;
+      height: 20px;
+      margin: 4px 0;
+
+      &:hover {
+        text-decoration: underline;
+      }
+
+      &.prev {
+        &:before {
+          content: "";
+          display: inline-block;
+          width: 30px;
+          height: 20px;
+          background-image: url(/wp-content/themes/Nep/assets/global/arrow-right.svg);
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: center center;
+          transform: translateX(0) rotate(180deg);
+          transition: 0.2s transform ease-in-out;
+          vertical-align: middle;
+        }
+
+        &:hover:before {
+          transform: translateX(-10px) rotate(180deg);
+        }
+      }
+      &.next {
+        &:after {
+          content: "";
+          display: inline-block;
+          width: 30px;
+          height: 20px;
+          background-image: url(/wp-content/themes/Nep/assets/global/arrow-right.svg);
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: center center;
+          transform: translateX(0);
+          transition: 0.2s transform ease-in-out;
+          vertical-align: middle;
+        }
+        &:hover:after {
+          transform: translateX(10px);
+        }
+      }
+    }
+  }
+}

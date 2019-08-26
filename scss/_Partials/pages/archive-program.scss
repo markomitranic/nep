@@ -34,7 +34,7 @@ body.post-type-archive-program {
           line-height: 50px;
         }
       }
-      #neps {
+      #categories {
         padding-left: 15px;
 
         ul {
@@ -49,15 +49,15 @@ body.post-type-archive-program {
           li {
             font-style: normal;
             font-weight: normal;
-            font-size: 36px;
-            line-height: 40px;
+            font-size: 24px;
+            line-height: 42px;
 
             @media (max-width: 600px) {
-              font-size: 26px;
-              line-height: 30px;
+              font-size: 20px;
+              line-height: 26px;
             }
             @media (max-width: 500px) {
-              font-size: 20px;
+              font-size: 18px;
               line-height: 22px;
             }
 
@@ -91,49 +91,6 @@ body.post-type-archive-program {
     main {
       padding-bottom: 40px;
 
-      #search {
-        display: block;
-        margin: 40px 0;
-
-        .wrapper {
-          width: 290px;
-          margin: 0 30px 0 auto;
-          padding-bottom: 10px;
-          border-bottom: 2px solid black;
-          max-width: 100%;
-
-          form {
-            display: flex;
-            justify-content: space-between;
-            align-items: stretch;
-
-            label {
-              display: none;
-            }
-            input[type="text"] {
-              background: transparent;
-              border: none;
-              flex: 1;
-              font-size: 22px;
-              line-height: 22px;
-            }
-            button {
-              background: transparent;
-              border: none;
-              width: 50px;
-              min-width: 50px;
-              height: 50px;
-              margin-left: 5px;
-              background-image: url($rootDir + "/assets/global/search.svg");
-              background-position: center center;
-              background-size: contain;
-              background-repeat: no-repeat;
-              color: transparent;
-              overflow: hidden;
-            }
-          }
-        }
-      }
       #programs-list {
         margin: 80px auto 40px auto;
 
@@ -244,72 +201,6 @@ body.post-type-archive-program {
                   font-size: 18px;
                   line-height: 22px;
                 }
-              }
-            }
-          }
-        }
-      }
-      .navigation.pagination {
-        display: flex;
-        align-items: stretch;
-        justify-content: flex-start;
-        flex-wrap: wrap;
-        padding: 0 40px;
-
-        h2 {
-          display: none;
-        }
-        .nav-links {
-          .page-numbers {
-            display: inline-block;
-            background: #7f7a8f;
-            padding: 10px 15px;
-            color: black;
-            text-decoration: none;
-            font-size: 20px;
-            line-height: 20px;
-            height: 20px;
-            margin: 4px 0;
-
-            &:hover {
-              text-decoration: underline;
-            }
-
-            &.prev {
-              &:before {
-                content: "";
-                display: inline-block;
-                width: 30px;
-                height: 20px;
-                background-image: url(/wp-content/themes/Nep/assets/global/arrow-right.svg);
-                background-size: contain;
-                background-repeat: no-repeat;
-                background-position: center center;
-                transform: translateX(0) rotate(180deg);
-                transition: 0.2s transform ease-in-out;
-                vertical-align: middle;
-              }
-
-              &:hover:before {
-                transform: translateX(-10px) rotate(180deg);
-              }
-            }
-            &.next {
-              &:after {
-                content: "";
-                display: inline-block;
-                width: 30px;
-                height: 20px;
-                background-image: url(/wp-content/themes/Nep/assets/global/arrow-right.svg);
-                background-size: contain;
-                background-repeat: no-repeat;
-                background-position: center center;
-                transform: translateX(0);
-                transition: 0.2s transform ease-in-out;
-                vertical-align: middle;
-              }
-              &:hover:after {
-                transform: translateX(10px);
               }
             }
           }
