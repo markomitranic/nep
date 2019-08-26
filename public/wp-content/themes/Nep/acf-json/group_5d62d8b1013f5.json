@@ -3,6 +3,30 @@
     "title": "Participants",
     "fields": [
         {
+            "key": "field_5d6411c67a966",
+            "label": "Photo",
+            "name": "photo",
+            "type": "image",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "thumbnail",
+            "library": "all",
+            "min_width": 400,
+            "min_height": 400,
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "jpg,png,jpeg"
+        },
+        {
             "key": "field_5d62dc8526166",
             "label": "Status Učesnika\/ce",
             "name": "participation_type",
@@ -45,5 +69,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1566760203
+    "modified": 1566854069
 }

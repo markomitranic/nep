@@ -16,7 +16,7 @@ if (defined('DEV_ENVIRONMENT') && DEV_ENVIRONMENT === true) {
  * @param bool $varDump
  * @param bool $die
  */
-function dump($data, $varDump = false, $die = false) {
+function dump($data, $varDump = false, $die = true) {
 	if (defined('DEV_ENVIRONMENT') && DEV_ENVIRONMENT === true) {
 		echo '<pre style="display: block; color: greenyellow; background:black; overflow:scroll;">';
 		print_r($data);

@@ -1,0 +1,46 @@
+{
+    "key": "group_5d643c37d0f00",
+    "title": "Program",
+    "fields": [
+        {
+            "key": "field_5d643c37d9a24",
+            "label": "Programi",
+            "name": "neps",
+            "type": "post_object",
+            "instructions": "Upišite spisak svih NEP programa na kojima je učesnik\/ca učestvovao\/la.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "nep"
+            ],
+            "taxonomy": "",
+            "allow_null": 0,
+            "multiple": 0,
+            "return_format": "object",
+            "ui": 1
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "program"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "side",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1566850334
+}

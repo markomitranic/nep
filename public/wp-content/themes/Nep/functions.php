@@ -102,3 +102,18 @@ function getAssetsVersion(): int
 
 	return ASSETS_VERSION;
 }
+
+function addToQueryString(array $values): string
+{
+	$currentQueryString = '';
+
+	$parsedUrl = parse_url($_SERVER['REQUEST_URI']);
+	if (array_key_exists('query', $parsedUrl)) {
+		$currentQueryString = $parsedUrl['query'];
+	}
+
+	parse_str($currentQueryString, $output);
+	$output = array_merge($output, $values);
+
+	return http_build_query($output);
+}

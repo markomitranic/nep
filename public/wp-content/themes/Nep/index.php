@@ -11,9 +11,7 @@
             <h1>Vesti</h1>
             <div id="years">
                 <ul>
-                    <li><a href="#">2019</a></li>
-                    <li><a href="#">2018</a></li>
-                    <li><a href="#">2017</a></li>
+                    <?php wp_get_archives('type=yearly'); ?>
                 </ul>
             </div>
         </div>
@@ -48,7 +46,7 @@
 	                    the_post();
                 ?>
                 <li>
-                    <a href="#" title="">
+                    <a href="<?=get_permalink()?>" title="<?=get_the_title()?>">
                         <div class="image" style="background-image:url('<?=get_template_directory_uri()?>/assets/temp/vesti-naslovna.png');">
                             <img src="<?=get_template_directory_uri()?>/assets/temp/vesti-naslovna.png" alt="">
                         </div>
@@ -98,9 +96,9 @@
 
 		<?php
             the_posts_pagination([
-                'mid_size'  => 2,
-                'prev_text' => '<span class="nav-prev-text">Newer posts</span>',
-                'next_text' => '<span class="nav-prev-text">Older posts</span>'
+                'mid_size'  => 4,
+                'prev_text' => '<span class="nav-prev-text">Početak</span>',
+                'next_text' => '<span class="nav-prev-text">Kraj</span>'
             ]);
         ?>
 

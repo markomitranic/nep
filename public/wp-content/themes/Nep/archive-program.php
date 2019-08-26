@@ -1,11 +1,4 @@
-<?php
-    get_header();
-
-    $participationType = null;
-    if (array_key_exists('participant', $_REQUEST)) {
-        $participationType = $_REQUEST['participant'];
-    }
-?>
+<?php get_header(); ?>
 
 <div id="masthead">
 	<div class="wrapper">
@@ -15,29 +8,17 @@
 			</a>
 		</div>
 		<div id="page-title">
-            <?php
-                switch ($participationType) {
-                    case 'alumni':
-                        $pageTitle = 'Alumni';
-                        break;
-                    case 'mentor':
-                        $pageTitle = 'Predavači i Mentori';
-                        break;
-                    default:
-                        $pageTitle = 'Učesnici';
-                }
-            ?>
-            <h1><?=$pageTitle?></h1>
+            <h1>Program</h1>
 			<div id="neps">
 				<ul>
-					<?php
-					/** @var WP_Term[] $categories */
-					$categories = get_terms('nep');
-					foreach ($categories as $category) :
-						$isActive = (array_key_exists('nep', $_REQUEST) && $category->slug === $_REQUEST['nep']) ? true : false;
-						?>
-                        <li <?=($isActive) ? 'class="active"' : ''?>><a href="?<?=addToQueryString(['nep' => $category->slug])?>"><?=$category->name?></a></li>
-					<?php endforeach; ?>
+                    <?php
+                        /** @var WP_Term[] $categories */
+                        $categories = get_terms('vrsta');
+                        foreach ($categories as $category) :
+                            $isActive = (array_key_exists('vrsta', $_REQUEST) && $category->slug === $_REQUEST['vrsta']) ? true : false;
+                    ?>
+                        <li <?=($isActive) ? 'class="active"' : ''?>><a href="?<?=addToQueryString(['vrsta' => $category->slug])?>"><?=$category->name?></a></li>
+                    <?php endforeach; ?>
 				</ul>
 			</div>
 		</div>
@@ -54,17 +35,17 @@
 					<label class="screen-reader-text" for="s">Pretraga za:</label>
 					<?php
 					$searchQuery = '';
-					if (array_key_exists('pretraga', $_REQUEST)) {
-						$searchQuery = $_REQUEST['pretraga'];
+					if (array_key_exists('s', $_REQUEST)) {
+						$searchQuery = $_REQUEST['s'];
 					}
 					?>
                     <input type="text" value="<?=$searchQuery?>" placeholder="Pretraga" name="s" id="s">
 
-                    <?php if (array_key_exists('participant', $_REQUEST)) : ?>
-                       <input type="hidden" value="<?=$_REQUEST['participant']?>" name="participant" id="participant">
+                    <?php if (array_key_exists('vrsta', $_REQUEST)) : ?>
+                       <input type="hidden" value="<?=$_REQUEST['vrsta']?>" name="vrsta" id="vrsta">
                    <?php endif; ?>
-					<?php if (array_key_exists('nep', $_REQUEST)) : ?>
-                        <input type="hidden" value="<?=$_REQUEST['nep']?>" name="nep" id="nep">
+					<?php if (array_key_exists('nep_program', $_REQUEST)) : ?>
+                        <input type="hidden" value="<?=$_REQUEST['nep_program']?>" name="nep_program" id="nep_program">
 					<?php endif; ?>
 					<button>&nbsp;</button>
 				</form>
@@ -104,7 +85,7 @@
 		the_posts_pagination([
 			'mid_size'  => 4,
 			'prev_text' => '<span class="nav-prev-text">Početak</span>',
-			'next_text' => '<span class="nav-prev-text">Kraj</span>'
+			'next_text' => '<span class="nav-prev-text">Kraj</span>',
 		]);
 		?>
 
