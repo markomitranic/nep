@@ -4,8 +4,6 @@ if ( defined('DEV_ENVIRONMENT') && DEV_ENVIRONMENT === true) {
 	include_once 'functions_dev.php';
 }
 
-include_once 'queries/queries.php';
-
 add_action( 'wp_enqueue_scripts', 'custom_styles' );
 function custom_styles() {
 	// Register the style first so that WP knows what we are working with:
