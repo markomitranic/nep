@@ -25,31 +25,6 @@
             "max_height": "",
             "max_size": "",
             "mime_types": "jpg,png,jpeg"
-        },
-        {
-            "key": "field_5d62dc8526166",
-            "label": "Status Učesnika\/ce",
-            "name": "participation_type",
-            "type": "select",
-            "instructions": "",
-            "required": 1,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "choices": {
-                "alumni": "Alumni",
-                "mentor": "Predavač\/Mentor"
-            },
-            "default_value": [],
-            "allow_null": 0,
-            "multiple": 1,
-            "ui": 1,
-            "ajax": 0,
-            "return_format": "value",
-            "placeholder": ""
         }
     ],
     "location": [
@@ -69,5 +44,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1566854069
+    "modified": 1566854071
 }

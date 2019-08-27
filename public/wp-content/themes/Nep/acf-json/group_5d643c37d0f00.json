@@ -42,11 +42,30 @@
             "post_type": [
                 "ucesnik"
             ],
-            "taxonomy": "",
+            "taxonomy": [
+                "tip_participacije:mentor"
+            ],
             "allow_null": 0,
             "multiple": 1,
             "return_format": "object",
             "ui": 1
+        },
+        {
+            "key": "field_5d658c81a1cbd",
+            "label": "Datum",
+            "name": "datum",
+            "type": "date_picker",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "display_format": "d\/m\/Y",
+            "return_format": "d\/m\/Y",
+            "first_day": 1
         }
     ],
     "location": [
@@ -66,5 +85,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1566932446
+    "modified": 1566936233
 }
