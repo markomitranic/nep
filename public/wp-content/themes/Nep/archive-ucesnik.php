@@ -2,8 +2,8 @@
     get_header();
 
     $participationType = null;
-    if (array_key_exists('participant', $_REQUEST)) {
-        $participationType = $_REQUEST['participant'];
+    if (array_key_exists('tip_participacije', $_REQUEST)) {
+        $participationType = $_REQUEST['tip_participacije'];
     }
 ?>
 
@@ -60,8 +60,8 @@
 					?>
                     <input type="text" value="<?=$searchQuery?>" placeholder="Pretraga" name="s" id="s">
 
-                    <?php if (array_key_exists('participant', $_REQUEST)) : ?>
-                       <input type="hidden" value="<?=$_REQUEST['participant']?>" name="participant" id="participant">
+                    <?php if (array_key_exists('tip_participacije', $_REQUEST)) : ?>
+                       <input type="hidden" value="<?=$_REQUEST['tip_participacije']?>" name="tip_participacije" id="tip_participacije">
                    <?php endif; ?>
 					<?php if (array_key_exists('nep', $_REQUEST)) : ?>
                         <input type="hidden" value="<?=$_REQUEST['nep']?>" name="nep" id="nep">

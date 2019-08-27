@@ -149,7 +149,8 @@ body.post-type-archive-program {
             }
 
             a {
-              padding: 20px;
+              padding: 0;
+              height: 100%;
               display: block;
               font-style: normal;
               font-weight: bold;
@@ -177,12 +178,84 @@ body.post-type-archive-program {
               }
 
               .image {
-                width: 170px;
-                height: 170px;
                 background-size: cover;
                 background-position: center center;
                 background-repeat: no-repeat;
+                margin: 0;
+                width: 100%;
+                height: 200px;
+                position: relative;
 
+                .program {
+                  display: block;
+                  background-color: #438b76;
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  width: 70px;
+                  height: 45px;
+                  text-transform: uppercase;
+
+                  span {
+                    content: "";
+                    display: block;
+                    width: 0;
+                    height: 0;
+                    position: absolute;
+                    left: 100%;
+                    top: 0;
+                    border-left: 35px solid #ff0000;
+                    border-bottom: 45px solid transparent;
+                  }
+                  p {
+                    font-size: 14px;
+                    width: 100%;
+                    text-align: left;
+                    line-height: 45px;
+                    padding: 0 10px;
+                    box-sizing: border-box;
+                    margin: 0;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    max-width: 100%;
+                  }
+                }
+                .type {
+                  display: block;
+                  background-color: #438b76;
+                  position: absolute;
+                  top: 0;
+                  right: 0;
+                  width: calc(100% - 100px);
+                  height: 45px;
+                  text-transform: uppercase;
+
+                  span {
+                    content: "";
+                    display: block;
+                    width: 0;
+                    height: 0;
+                    position: absolute;
+                    right: 100%;
+                    top: 0;
+                    border-right: 35px solid #ff0000;
+                    border-bottom: 45px solid transparent;
+                  }
+                  p {
+                    width: 100%;
+                    text-align: right;
+                    font-size: 14px;
+                    line-height: 45px;
+                    padding: 0 10px;
+                    box-sizing: border-box;
+                    margin: 0;
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    max-width: 100%;
+                  }
+                }
                 img {
                   width: 100%;
                   height: auto;
@@ -192,15 +265,23 @@ body.post-type-archive-program {
 
               .info {
                 height: auto;
-                padding: 15px 35px 15px 0;
+                padding: 15px 35px 15px 25px;
                 box-sizing: border-box;
 
+                .date {
+                  display: block;
+                  font-weight: normal;
+                }
                 h2 {
                   margin: 0;
                   font-style: normal;
                   font-weight: bold;
-                  font-size: 18px;
-                  line-height: 22px;
+                  font-size: 22px;
+                  line-height: 26px;
+                }
+                .excerpt {
+                  display: block;
+                  font-weight: normal;
                 }
               }
             }

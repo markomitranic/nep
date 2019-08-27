@@ -32,14 +32,14 @@
 		<div id="search" class="with-categories">
             <div class="wrapper-category">
                 <form  role="search" method="get" id="category-switch" action="">
-                    <label class="screen-reader-text" for="nep_program">Pretraga za:</label>
+                    <label class="screen-reader-text" for="nep">Pretraga za:</label>
 					<?php
                         $searchQuery = '';
-                        if (array_key_exists('nep_program', $_REQUEST)) {
-                            $programQuery = $_REQUEST['nep_program'];
+                        if (array_key_exists('nep', $_REQUEST)) {
+                            $programQuery = $_REQUEST['nep'];
                         }
 					?>
-                    <select name="nep_program" id="nep_program" onchange="this.form.submit()">
+                    <select name="nep" id="nep" onchange="this.form.submit()">
                         <option disabled selected value>---</option>
 						<?php
                             /** @var WP_Term[] $categories */
@@ -74,8 +74,8 @@
                     <?php if (array_key_exists('vrsta', $_REQUEST)) : ?>
                        <input type="hidden" value="<?=$_REQUEST['vrsta']?>" name="vrsta" id="vrsta">
                    <?php endif; ?>
-					<?php if (array_key_exists('nep_program', $_REQUEST)) : ?>
-                        <input type="hidden" value="<?=$_REQUEST['nep_program']?>" name="nep_program" id="nep_program">
+					<?php if (array_key_exists('nep', $_REQUEST)) : ?>
+                        <input type="hidden" value="<?=$_REQUEST['nep']?>" name="nep_program" id="nep">
 					<?php endif; ?>
 					<button>&nbsp;</button>
 				</form>
@@ -88,15 +88,44 @@
 					<?php
 					while (have_posts()) :
 						the_post();
+					    /** @var WP_Term[] $programs */
+					    $programs = get_the_terms($post->ID, 'nep');
+						$programName = null;
+					    if (!empty($programs)) {
+						    $programName = $programs[0]->name;
+						    $programColor = get_field('color', $programs[0]->taxonomy . '_' . $programs[0]->term_id);
+                        }
+
+					    /** @var WP_Term[] $types */
+					    $types = get_the_terms($post->ID, 'vrsta');
+						$typeName = null;
+						if (!empty($types)) {
+							$typeName = $types[0]->name;
+							$typeColor = get_field('color', $types[0]->taxonomy . '_' . $types[0]->term_id);
+						}
 						?>
 						<li>
 							<a href="<?=get_permalink()?>" title="Profil <?=get_the_title()?>">
                                 <?php $image = get_field('photo'); ?>
 								<div class="image" style="background-image:url(<?=$image['sizes']['thumbnail']?>);">
+									<?php if (!is_null($programName)) : ?>
+                                        <div class="program" style="background-color: <?=$programColor?>">
+                                            <span style="border-left-color: <?=$programColor?>"></span>
+                                            <p>#<?=$programName?></p>
+                                        </div>
+                                    <?php endif; ?>
+									<?php if (!is_null($typeName)) : ?>
+                                        <div class="type" style="background-color: <?=$typeColor?>">
+                                            <span style="border-right-color: <?=$typeColor?>"></span>
+                                            <p class="shouldShave" data-rows="1"><?=$typeName?></p>
+                                        </div>
+                                    <?php endif; ?>
 									<img src="<?=$image['sizes']['thumbnail']?>" alt="<?=$image['alt']?>">
 								</div>
 								<div class="info">
+                                    <p class="date"><?=get_field('datum')?></p>
 									<h2><?=get_the_title()?></h2>
+                                    <p class="excerpt"><?=getExcerpt(get_the_excerpt(), 20)?></p>
 								</div>
 							</a>
 						</li>
