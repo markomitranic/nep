@@ -125,7 +125,7 @@
 								<div class="info">
                                     <p class="date"><?=get_field('datum')?></p>
 									<h2><?=get_the_title()?></h2>
-                                    <p class="excerpt"><?=getExcerpt(get_the_excerpt(), 20)?></p>
+                                    <p class="excerpt shouldShave" data-rows="6"><?=getExcerpt(get_the_excerpt(), 20)?></p>
 								</div>
 							</a>
 						</li>
