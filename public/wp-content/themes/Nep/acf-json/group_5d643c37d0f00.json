@@ -3,11 +3,11 @@
     "title": "Program",
     "fields": [
         {
-            "key": "field_5d643c37d9a24",
-            "label": "Programi",
-            "name": "neps",
-            "type": "post_object",
-            "instructions": "Upišite spisak svih NEP programa na kojima je učesnik\/ca učestvovao\/la.",
+            "key": "field_5d657b57bd9df",
+            "label": "Istaknuta Slika",
+            "name": "photo",
+            "type": "image",
+            "instructions": "Mala slika koja će biti prikazana na svim karticama na kategorijama i listama.",
             "required": 1,
             "conditional_logic": 0,
             "wrapper": {
@@ -15,12 +15,36 @@
                 "class": "",
                 "id": ""
             },
+            "return_format": "array",
+            "preview_size": "thumbnail",
+            "library": "all",
+            "min_width": 300,
+            "min_height": 300,
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "jpg,png,jpeg"
+        },
+        {
+            "key": "field_5d657caa1a223",
+            "label": "Predavači",
+            "name": "predavaci",
+            "type": "post_object",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "post_type": [
-                "nep"
+                "ucesnik"
             ],
             "taxonomy": "",
             "allow_null": 0,
-            "multiple": 0,
+            "multiple": 1,
             "return_format": "object",
             "ui": 1
         }
@@ -42,5 +66,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1566850334
+    "modified": 1566932446
 }

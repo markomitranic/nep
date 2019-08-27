@@ -9,7 +9,7 @@
 		</div>
 		<div id="page-title">
             <h1>Program</h1>
-			<div id="neps">
+			<div id="categories">
 				<ul>
                     <?php
                         /** @var WP_Term[] $categories */
@@ -29,9 +29,39 @@
 	<?php get_template_part('partials/sidebar'); ?>
 	<main>
 
-		<div id="search">
+		<div id="search" class="with-categories">
+            <div class="wrapper-category">
+                <form  role="search" method="get" id="category-switch" action="">
+                    <label class="screen-reader-text" for="nep_program">Pretraga za:</label>
+					<?php
+                        $searchQuery = '';
+                        if (array_key_exists('nep_program', $_REQUEST)) {
+                            $programQuery = $_REQUEST['nep_program'];
+                        }
+					?>
+                    <select name="nep_program" id="nep_program" onchange="this.form.submit()">
+                        <option disabled selected value>---</option>
+						<?php
+                            /** @var WP_Term[] $categories */
+                            $categories = get_terms('nep');
+                            foreach ($categories as $category) :
+                                $isActive = ($category->slug === $programQuery) ? true : false;
+                        ?>
+                            <option value="<?=$category->slug?>" <?=($isActive) ? 'selected' : ''?>><?=$category->name?></option>
+						<?php endforeach; ?>
+                    </select>
+
+					<?php if (array_key_exists('vrsta', $_REQUEST)) : ?>
+                        <input type="hidden" value="<?=$_REQUEST['vrsta']?>" name="vrsta" id="vrsta">
+					<?php endif; ?>
+					<?php if (array_key_exists('s', $_REQUEST)) : ?>
+                        <input type="hidden" value="<?=$_REQUEST['s']?>" name="s" id="s">
+					<?php endif; ?>
+                    <button>&nbsp;</button>
+                </form>
+            </div>
 			<div class="wrapper">
-				<form  role="search" method="get" id="searchform" class="searchform" action="#">
+				<form  role="search" method="get" id="searchform" class="searchform" action="">
 					<label class="screen-reader-text" for="s">Pretraga za:</label>
 					<?php
 					$searchQuery = '';

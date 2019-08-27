@@ -117,3 +117,25 @@ function addToQueryString(array $values): string
 
 	return http_build_query($output);
 }
+
+function get_formatted_thumbnail(int $postId): ?array
+{
+	$attachmentId = get_post_thumbnail_id($postId);
+
+	if (empty($attachmentId)) {
+		return null;
+	}
+
+	return get_formatted_attachment($attachmentId);
+}
+
+function get_formatted_attachment(int $attachmentId): ?array
+{
+	$attachment = acf_get_attachment($attachmentId);
+
+	if (empty($attachment)) {
+		return null;
+	}
+
+	return $attachment;
+}

@@ -24,7 +24,7 @@
 
         <div id="search">
             <div class="wrapper">
-                <form  role="search" method="get" id="searchform" class="searchform" action="#">
+                <form  role="search" method="get" id="searchform" class="searchform" action="">
                     <label class="screen-reader-text" for="s">Pretraga za:</label>
                     <?php
                         $searchQuery = '';
