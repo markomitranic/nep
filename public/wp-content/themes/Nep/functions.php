@@ -7,7 +7,7 @@ if ( defined('DEV_ENVIRONMENT') && DEV_ENVIRONMENT === true) {
 add_action( 'wp_enqueue_scripts', 'custom_styles' );
 function custom_styles() {
 	// Register the style first so that WP knows what we are working with:
-	wp_register_style( 'core-css', get_template_directory_uri() . '/css/style.css' );
+	wp_register_style( 'core-css', get_template_directory_uri() . '/css/style.css', [], getAssetsVersion() );
 
 	// Then we need to enqueue them one by one to the theme:
 	wp_enqueue_style( 'core-css' );
