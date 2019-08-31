@@ -86,23 +86,23 @@
 			<?php if (have_posts()) : ?>
 				<ul>
 					<?php
-					while (have_posts()) :
-						the_post();
-					    /** @var WP_Term[] $programs */
-					    $programs = get_the_terms($post->ID, 'nep');
-						$programName = null;
-					    if (!empty($programs)) {
-						    $programName = $programs[0]->name;
-						    $programColor = get_field('color', $programs[0]->taxonomy . '_' . $programs[0]->term_id);
-                        }
+                        while (have_posts()) :
+                            the_post();
+                            /** @var WP_Term[] $programs */
+                            $programs = get_the_terms($post->ID, 'nep');
+                            $programName = null;
+                            if (!empty($programs)) {
+                                $programName = $programs[0]->name;
+                                $programColor = get_field('color', $programs[0]->taxonomy . '_' . $programs[0]->term_id);
+                            }
 
-					    /** @var WP_Term[] $types */
-					    $types = get_the_terms($post->ID, 'vrsta');
-						$typeName = null;
-						if (!empty($types)) {
-							$typeName = $types[0]->name;
-							$typeColor = get_field('color', $types[0]->taxonomy . '_' . $types[0]->term_id);
-						}
+                            /** @var WP_Term[] $types */
+                            $types = get_the_terms($post->ID, 'vrsta');
+                            $typeName = null;
+                            if (!empty($types)) {
+                                $typeName = $types[0]->name;
+                                $typeColor = get_field('color', $types[0]->taxonomy . '_' . $types[0]->term_id);
+                            }
 						?>
 						<li>
 							<a href="<?=get_permalink()?>" title="Profil <?=get_the_title()?>">
