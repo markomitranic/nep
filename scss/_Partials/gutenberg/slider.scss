@@ -1,59 +1,56 @@
 .wp-block-slider {
-  @media screen and (max-width: 650px) {
-    margin-left: -16px;
-    margin-right: -16px;
-  }
+  .tns-outer {
+    position: relative;
 
-  .owl-carousel {
-    .owl-stage-outer {
-      max-height: 80vh;
-
-
-      .owl-item {
-        opacity: 0.6;
-        transition: 0.3s opacity ease-in-out;
-
-        &.center {
-            opacity: 1;
-        }
-
-        & > div {
-          img {
-            max-height: 80vh;
-            max-width: 90vw;
-            width: auto;
-          }
-        }
-      }
-    }
-
-    .owl-dots {
-      width: 100%;
-      max-width: 500px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin: 10px auto;
+    .tns-nav {
+      position: absolute;
+      z-index: 9;
+      left: 50%;
+      bottom: 25px;
+      transform: translateX(-50%);
 
       button {
-        margin: 10px;
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        background-color: transparent;
+        border: 2px solid black;
+        border-radius: 50%;
+        margin: 0 6px;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        opacity: 1;
+        transition: 0.2s opacity ease-in-out;
+        will-change: opacity;
 
-        &.active {
-          span {
-            border: 1px solid #0f0f0f;
-            background-color: transparent;
-          }
+        &.tns-nav-active {
+          opacity: 0.2;
         }
+      }
+    }
+    .tns-inner {
+      ul.tns-slider {
+        li.tns-item {
+          .image {
+            overflow: hidden;
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            height: 400px;
 
-        span {
-          display: block;
-          width: 5px;
-          height: 5px;
-          background-color: #0f0f0f;
-          border-radius: 50%;
+            @media (max-width: 580px) {
+              height: 40vw;
+            }
+
+            img {
+              width: 100%;
+              height: auto;
+              opacity: 0;
+            }
+          }
         }
       }
     }
   }
-
 }
