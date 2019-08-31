@@ -1,7 +1,9 @@
 & > ul, & > ol {
-  max-width: 540px;
-  margin: 48px auto;
-  padding: 0 20px;
-  line-height: 145%;
   list-style-position: inside;
+  max-width: 730px;
+  box-sizing: border-box;
+  margin: 46px auto;
+  padding: 0 20px 0 80px;
+  font-size: 18px;
+  line-height: 28px;
 }

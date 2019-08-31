@@ -1,9 +1,19 @@
 & > p {
-  max-width: 540px;
-  margin: 48px auto;
+  max-width: 730px;
+  margin: 46px auto;
   padding: 0 20px;
-  line-height: 145%;
+  font-size: 18px;
+  line-height: 28px;
 
+  &.has-medium-font-size {
+    font-size: 22px;
+  }
+  &.has-large-font-size {
+    font-size: 36px;
+  }
+  &.has-huge-font-size {
+    font-size: 42px;
+  }
   &.has-drop-cap:first-letter {
     font-size: 5.5em;
   }
@@ -11,10 +21,18 @@
     padding-top: 10px;
     padding-bottom: 10px;
   }
+  a {
+    color: black;
+  }
 }
-
 .wp-block-columns {
-  max-width: 540px;
-  margin: 48px auto;
+  max-width: 730px;
+  margin: 46px auto;
   padding: 0 20px;
+  font-size: 18px;
+  line-height: 28px;
+
+  a {
+    color: black;
+  }
 }

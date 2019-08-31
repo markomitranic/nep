@@ -1,12 +1,12 @@
 // Imports for all different blocks. Custom and otherwise.
 #post-content {
   @import "paragraph";
+  @import "heading";
   @import "list";
   @import "image";
   @import "video";
   @import "file";
   @import "quote";
-  @import "double-image";
   @import "gallery";
   @import "code";
   @import "slider";
@@ -16,4 +16,7 @@
   @import "separator";
   @import "search";
   @import "yoast-faq";
+
+  padding-top: 5px;
+  padding-bottom: 5px;
 }

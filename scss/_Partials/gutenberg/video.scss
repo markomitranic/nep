@@ -1,12 +1,13 @@
 .wp-block-video {
   text-align: center;
   margin: 48px auto;
-  max-width: 680px;
+  max-width: 730px;
 }
 .wp-block-embed {
   text-align: center;
   margin: 48px auto;
-  max-width: 680px;
+  max-width: 730px;
+  width: 100%;
 
   @media screen and (max-width: 720px){
     padding-left: 20px;
@@ -19,16 +20,17 @@
 
   // Complicated fix to override default WP positioning which breaks aspect ratio.
   .wp-block-embed__wrapper {
-    height: calc((680px / 16) * 9);
+    height: calc((730px / 16) * 9);
 
     @media screen and (max-width: 720px){
       height: calc((100vw / 16) * 8);
     }
 
-    .flex-video {
+    .flex-video, iframe {
       position: static;
       padding: 0;
       height: 100%;
+      width: 100%;
 
       iframe {
         position: static;

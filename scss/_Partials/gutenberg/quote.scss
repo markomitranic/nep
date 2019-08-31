@@ -1,37 +1,41 @@
 .wp-block-quote, .wp-block-pullquote {
-  margin: 48px auto;
-  max-width: 600px;
+  margin: 46px auto;
+  max-width: 730px;
 
   &.is-style-large {
-    max-width: 790px;
+    max-width: 730px;
 
     p {
-      font-size: 2rem;
-      max-width: 790px;
-      line-height: 3rem;
-      text-align: left;
-      border: none;
+      font-size: 26px;
+      line-height: 32px;
     }
   }
 
   p {
-    border: 1px solid black;
     padding: 25px;
     margin: 0 auto;
-    text-align: center;
-    font-size: 1.25rem;
-    line-height: 2rem;
+    font-family: "Cardo", "Times New Roman", serif;
     font-style: italic;
-    max-width: 600px;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 24px;
 
     a {
       font-style: italic;
+      color: black;
       text-decoration: underline;
       cursor: pointer;
     }
   }
   cite {
+    font-family: "Cardo", "Times New Roman", serif;
+    font-style: italic;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 24px;
     text-align: right;
     padding: 10px 10px;
+    width: 100%;
+    display: block;
   }
 }

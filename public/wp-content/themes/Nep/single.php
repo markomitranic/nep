@@ -50,6 +50,7 @@
             </ul>
             <?php endif; ?>
             <h1><?php the_title(); ?></h1>
+            <p class="date"><?=get_the_date()?></p>
         </div>
 
 		<div id="post-content">

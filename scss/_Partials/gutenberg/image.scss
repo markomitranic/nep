@@ -3,6 +3,10 @@
   margin: 48px auto;
   max-width: 680px;
 
+  img {
+    height: auto;
+  }
+
   a {
     img {
       max-width: 100%;
@@ -20,6 +24,10 @@
       display: block;
       border-top: 1px solid;
       margin: 10px auto;
+    }
+
+    a {
+      color: black;
     }
   }
 }

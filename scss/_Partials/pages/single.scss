@@ -93,10 +93,6 @@ body.single-post {
         position: relative;
         border-bottom: 2px solid black;
 
-        h1 {
-          padding: 30px 60px 40px 90px;
-          margin: 0;
-        }
         ul {
           position: relative;
           top: 0;
@@ -179,6 +175,15 @@ body.single-post {
               }
             }
           }
+        }
+        h1 {
+          padding: 30px 60px 0 90px;
+          margin: 0;
+          margin-bottom: 20px;
+        }
+        .date {
+          padding: 0 60px 20px 90px;
+          margin-top: 20px;
         }
       }
     }
