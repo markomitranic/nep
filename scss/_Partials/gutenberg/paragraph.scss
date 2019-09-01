@@ -20,6 +20,11 @@
   &.has-background {
     padding-top: 10px;
     padding-bottom: 10px;
+
+    @media (max-width: 1200px) {
+      margin-left: 20px;
+      margin-right: 20px;
+    }
   }
   a {
     color: black;

@@ -2,4 +2,9 @@
   max-width: 730px;
   margin: 46px auto;
   width: 100%;
+
+  @media (max-width: 1200px) {
+    box-sizing: border-box;
+    padding: 0 20px;
+  }
 }
