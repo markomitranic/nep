@@ -33,6 +33,7 @@ const contentBlockSlider = {
             items: 1,
             controls: false,
             nav: true,
+            mouseDrag: true,
             swipeAngle: false,
             speed: this.transitionSpeed,
             autoplayTimeout: this.slideDuration,

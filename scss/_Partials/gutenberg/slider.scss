@@ -1,6 +1,9 @@
 .wp-block-slider {
+  margin: 42px 25px;
+
   .tns-outer {
     position: relative;
+    cursor: ew-resize;
 
     .tns-nav {
       position: absolute;
@@ -21,23 +24,27 @@
         background-repeat: no-repeat;
         background-size: cover;
         opacity: 1;
-        transition: 0.2s opacity ease-in-out;
-        will-change: opacity;
+        transition: 0.4s opacity ease-in-out, 0.2s background-color ease-in-out;
+        will-change: opacity, background-color;
 
         &.tns-nav-active {
-          opacity: 0.2;
+          opacity: 0.4;
+          background: black;
         }
       }
     }
     .tns-inner {
       ul.tns-slider {
+        padding: 0;
+
         li.tns-item {
           .image {
             overflow: hidden;
             background-size: cover;
             background-position: center center;
             background-repeat: no-repeat;
-            height: 400px;
+            height: 32vw;
+            width: 100%;
 
             @media (max-width: 580px) {
               height: 40vw;
