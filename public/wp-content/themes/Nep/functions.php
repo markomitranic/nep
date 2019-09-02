@@ -164,4 +164,19 @@ function get_formatted_attachment(int $attachmentId): ?array
 	return $attachment;
 }
 
+function isParticipationType(int $participantId, string $typeSlug): bool
+{
+	/** @var WP_Term[] $categories */
+	$participationTypes = get_the_terms( $participantId, 'tip_participacije' );
+
+	if ($participationTypes) {
+		foreach ($participationTypes as $participationType) {
+			if ($participationType->slug === $typeSlug) {
+				return true;
+			}
+		}
+	}
+
+	return false;
+}
 

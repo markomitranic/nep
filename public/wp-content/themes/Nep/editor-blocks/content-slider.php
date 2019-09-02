@@ -13,8 +13,8 @@ $slides = get_field('slides');
     <ul>
 	    <?php foreach ($slides as $slide) : ?>
             <li>
-                <div class="image" style="background-image: url('<?= $slide['sizes']['medium_large'] ?>')">
-                    <img src="<?= $slide['sizes']['medium_large'] ?>" alt="<?=$slide['alt']?>">
+                <div class="image" style="background-image: url('<?= $slide['sizes']['large'] ?>')">
+                    <img src="<?= $slide['sizes']['large'] ?>" alt="<?=$slide['alt']?>">
                 </div>
             </li>
 	    <?php endforeach; ?>
