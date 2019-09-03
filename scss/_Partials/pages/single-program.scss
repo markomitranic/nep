@@ -262,6 +262,12 @@ body.single-program {
               &:before {
                 background-image: url($rootDir + "/assets/global/moderator-icon.svg");
               }
+
+              ul {
+                list-style-type: none;
+                padding: 0;
+                margin: 0;
+              }
             }
             p, a {
               display: block;

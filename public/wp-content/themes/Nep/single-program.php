@@ -77,16 +77,26 @@
         <div id="itinerary">
             <div class="wrapper">
                 <div class="date">
-                    <p>21.09.20321</p>
+                    <p><?=get_field('datum')?></p>
                 </div>
                 <div class="time">
-                    <p>18h</p>
+                    <p><?=get_field('vreme')?></p>
                 </div>
                 <div class="location">
-                    <a href="#" title="Pregledaj na Maps aplikaciji" rel="nofollow" target="_blank">Nova Iskra DORCOL</a>
+                    <a href="<?=get_field('url_lokacije')?>" title="Pregledaj na Maps aplikaciji" rel="nofollow" target="_blank"><?=get_field('naziv_lokacije')?></a>
                 </div>
                 <div class="moderator">
-                    <a href="#" title="Profil moderatora NAna">Nana Radenkovič</a>
+                    <ul>
+	                    <?php
+                            /** @var WP_Post[] $moderators */
+                            $moderators = get_field('predavaci');
+                            foreach ($moderators as $moderator) :
+	                    ?>
+                            <li>
+                                <a href="<?=get_the_permalink($moderator->ID)?>" title="Profil moderatora <?=$moderator->post_title?>"><?=$moderator->post_title?></a>
+                            </li>
+                        <?php endforeach;?>
+                    </ul>
                 </div>
             </div>
         </div>

@@ -27,22 +27,6 @@
             "mime_types": "jpg,png,jpeg"
         },
         {
-            "key": "field_5d6ed79018ffb",
-            "label": "Vreme",
-            "name": "vreme",
-            "type": "time_picker",
-            "instructions": "",
-            "required": 1,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "display_format": "H:i",
-            "return_format": "H:i"
-        },
-        {
             "key": "field_5d658c81a1cbd",
             "label": "Datum",
             "name": "datum",
@@ -58,6 +42,22 @@
             "display_format": "d\/m\/Y",
             "return_format": "d\/m\/Y",
             "first_day": 1
+        },
+        {
+            "key": "field_5d6ed79018ffb",
+            "label": "Vreme",
+            "name": "vreme",
+            "type": "time_picker",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "display_format": "H:i",
+            "return_format": "H:i"
         },
         {
             "key": "field_5d6ed8be064c8",
@@ -100,7 +100,7 @@
             "name": "predavaci",
             "type": "post_object",
             "instructions": "",
-            "required": 0,
+            "required": 1,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
@@ -129,12 +129,12 @@
         ]
     ],
     "menu_order": 0,
-    "position": "acf_after_title",
-    "style": "seamless",
+    "position": "side",
+    "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1567546544
+    "modified": 1567547182
 }
