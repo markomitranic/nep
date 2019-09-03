@@ -105,6 +105,45 @@
             <?php the_content(); ?>
 		</div>
 
+        <div id="moderators">
+            <h2>Predavači:</h2>
+            <ul>
+	            <?php
+                    /** @var WP_Post[] $moderators */
+                    $moderators = get_field('predavaci');
+                    foreach ($moderators as $moderator) :
+	            ?>
+                    <li class="moderator">
+                        <div class="portrait">
+                            <?php if ($portrait = get_field('photo', $moderator->ID)) : ?>
+                                <img src="<?=$portrait['sizes']['medium']?>" alt="<?=$portrait['alt']?>">
+                            <?php endif; ?>
+                            <h3>
+                                <a href="<?=get_the_permalink($moderator->ID)?>", title="Pregled profila <?=$moderator->post_title ?>">
+	                                <?=$moderator->post_title ?>
+                                </a>
+                            </h3>
+                            <?php if ($jobTitle = get_field('title', $moderator->ID)) : ?>
+                                <p class="job-title"><?=$jobTitle?></p>
+                            <?php endif; ?>
+                        </div>
+                        <div class="post-content">
+	                        <p><?=getExcerpt($moderator->post_content, 80, true); ?></p>
+                            <?php if ($links = get_field('linkovi', $moderator->ID)) : ?>
+                                <ul class="links">
+                                    <?php foreach ($links as $link) : ?>
+                                        <li>
+                                            <a href="<?=$link['url']?>" target="_blank" rel="nofollow"><?=$link['label']?></a>
+                                        </li>
+                                    <?php endforeach; ?>
+                                </ul>
+                            <?php endif; ?>
+                        </div>
+                    </li>
+                <?php endforeach; ?>
+            </ul>
+        </div>
+
 	</main>
 </div>
 

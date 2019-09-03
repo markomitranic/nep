@@ -221,6 +221,11 @@ body.single-program {
           justify-content: space-between;
           align-items: stretch;
 
+          @media (max-width: 1050px) {
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+          }
+
           & > div {
             position: relative;
             display: block;
@@ -228,6 +233,10 @@ body.single-program {
             min-height: 52px;
             box-sizing: border-box;
             margin: 0 15px;
+
+            @media (max-width: 1050px) {
+              width: calc(50% - 80px);
+            }
 
             &:before {
               content: "";
@@ -280,6 +289,149 @@ body.single-program {
               padding: 0;
               padding-top: 10px;
 
+            }
+          }
+        }
+      }
+      #post-content {
+        border-bottom: 2px solid black;
+      }
+      #moderators {
+        h2 {
+          display: block;
+          width: 100%;
+          margin: 30px auto;
+          max-width: 740px;
+          text-transform: uppercase;
+          font-style: normal;
+          font-weight: bold;
+          font-size: 20px;
+          line-height: 22px;
+        }
+        ul {
+          list-style-type: none;
+          padding: 0;
+          margin: 46px auto;
+
+          li.moderator {
+            padding: 50px 20px;
+            max-width: 780px;
+            margin: 0 auto;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: space-between;
+            align-items: stretch;
+
+            @media (max-width: 1120px) {
+              flex-wrap: wrap;
+            }
+            @media (max-width: 930px) {
+              padding: 20px 50px;
+            }
+            @media (max-width: 930px) {
+              padding: 20px 50px 20px 20px;
+            }
+
+            .portrait {
+              width: 160px;
+              padding-top: 10px;
+
+              @media (max-width: 1120px) {
+                width: 100%
+              }
+
+              img {
+                max-width: 120px;
+                width: 100%;
+                margin: 0;
+                height: auto;
+                display: block;
+
+                @media (max-width: 1120px) {
+                  max-width: 230px;
+                  margin: 0 auto;
+                }
+              }
+              h3 a {
+                display: block;
+                color: black;
+                font-style: normal;
+                font-weight: bold;
+                font-size: 16px;
+                line-height: 22px;
+                padding: 0;
+                margin: 0;
+
+                @media (max-width: 1120px) {
+                  text-align: center;
+                }
+              }
+              .job-title {
+                display: block;
+                font-style: normal;
+                font-weight: normal;
+                padding-left: 8px;
+                margin-top: 5px;
+                font-size: 16px;
+                line-height: 22px;
+
+                @media (max-width: 1120px) {
+                  text-align: center;
+                }
+              }
+            }
+            .post-content {
+              flex: 1;
+              width: 100%;
+              margin-left: calc(46px - 20px); // To compensate for block's inner padding. Should be 46 in total.
+
+              & > p {
+                font-style: normal;
+                font-weight: normal;
+                font-size: 18px;
+                line-height: 24px;
+              }
+
+              .links {
+                display: block;
+                position: relative;
+                list-style-type: none;
+                margin: 46px 0 0 0;
+                padding-left: 80px;
+
+                &:before {
+                  content: "";
+                  display: block;
+                  position: absolute;
+                  top: 0;
+                  left: 25px;
+                  width: 34px;
+                  height: 34px;
+                  background-image: url($rootDir + 'assets/global/arrow-right.svg');
+                  background-size: contain;
+                  background-repeat: no-repeat;
+                  background-position: center center;
+                }
+
+                li {
+                  margin: 10px 0;
+
+                  a {
+                    font-style: normal;
+                    font-weight: bold;
+                    font-size: 18px;
+                    line-height: 22px;
+                    text-decoration: underline;
+                    color: black;
+                    text-transform: lowercase;
+                    transition: 0.2s color ease-in-out;
+
+                    &:hover {
+                      color: #464646;
+                    }
+                  }
+                }
+              }
             }
           }
         }
