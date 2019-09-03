@@ -20,17 +20,17 @@
             </div>
             <ul class="logos">
                 <li>
-                    <a href="https://novaiskra.com/en/home-page/" target="_blank" rel="nofollow" title="Visit Nova Iskra website">
+                    <a href="https://novaiskra.com" target="_blank" rel="nofollow" title="Visit Nova Iskra website">
                         <img src="<?=get_template_directory_uri()?>/assets/global/Nova Iskra Logo.svg" alt="Nova Iskra Logo">
                     </a>
                 </li>
                 <li>
-                    <a href="http://www.nelt.rs/en" target="_blank" rel="nofollow" title="Visit NELT website">
+                    <a href="http://www.nelt.rs" target="_blank" rel="nofollow" title="Visit NELT website">
                         <img src="<?=get_template_directory_uri()?>/assets/global/Nelt Logo.svg" alt="NELT Logo">
                     </a>
                 </li>
                 <li>
-                    <a href="http://www.g12hub.com/en" target="_blank" rel="nofollow" title="Visit G12 Hub website">
+                    <a href="http://www.g12hub.com" target="_blank" rel="nofollow" title="Visit G12 Hub website">
                         <img src="<?=get_template_directory_uri()?>/assets/global/G12 Hub Logo.svg" alt="G12 Hub Logo">
                     </a>
                 </li>

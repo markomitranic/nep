@@ -1,0 +1,105 @@
+{
+    "key": "group_5d6ea548b05b2",
+    "title": "Biblioteka",
+    "fields": [
+        {
+            "key": "field_5d6ea7025aaff",
+            "label": "Istaknuta Slika",
+            "name": "istaknuta_slika",
+            "type": "image",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "thumbnail",
+            "library": "all",
+            "min_width": 200,
+            "min_height": 200,
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "jpg,jpeg,png"
+        },
+        {
+            "key": "field_5d6ea54e4b31b",
+            "label": "Autor",
+            "name": "autor",
+            "type": "text",
+            "instructions": "Ukoliko je autor ujedno i mentor sa nekog od NEP programa, ostavite ovo polje praznim i odaberite učesnicu\/ka u polju ispod.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5d6ea5634b31c",
+                        "operator": "==empty"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "Lazar Džamić",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5d6ea5634b31c",
+            "label": "Autor-Mentor",
+            "name": "autor-mentor",
+            "type": "post_object",
+            "instructions": "Ukoliko autor nije registrovani NEP mentor, ostavite ovo polje praznim i ručno upišite ime u polju iznad.",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5d6ea54e4b31b",
+                        "operator": "==empty"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "ucesnik"
+            ],
+            "taxonomy": [
+                "tip_participacije:mentor"
+            ],
+            "allow_null": 1,
+            "multiple": 0,
+            "return_format": "object",
+            "ui": 1
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "biblioteka"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "side",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1567532843
+}
