@@ -71,16 +71,18 @@
                         </div>
                         <div class="info">
                             <div class="announcement">
-                                <p class="program">#nep4</p>
+	                            <?php
+                                    /** @var WP_Term[] $categories */
+                                    $nepPrograms = get_the_terms($featuredProgram->ID, 'nep');
+                                    if (!empty($nepPrograms)) :
+	                            ?>
+                                    <p class="program">#<?=$nepPrograms[0]->name?></p>
+                                <?php endif; ?>
                                 <h2><?=$featuredProgram->post_title?></h2>
                             </div>
                             <div class="signature">
-                                <p class="venue">G12HUB</p>
-                                <?php
-                                $startDate = new DateTimeImmutable();
-                                $endDate = new DateTimeImmutable('+ 25 days');
-                                ?>
-                                <p class="date"><?=$startDate->format('d. M')?> - <?=$endDate->format('d. M')?></p>
+                                <p class="venue"><?=get_field('naziv_lokacije', $featuredProgram->ID)?></p>
+                                <p class="date"><?=get_field('datum', $featuredProgram->ID)?></p>
                             </div>
                         </div>
                     </a>
