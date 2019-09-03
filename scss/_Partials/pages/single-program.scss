@@ -186,6 +186,19 @@ body.single-program {
           list-style-type: none;
           padding: 0 60px 0 90px;
           margin: 30px 0 20px 0;
+
+          li {
+            display: block;
+            margin: 0 auto 7px auto;
+
+            a {
+              color: black;
+              text-transform: uppercase;
+              font-weight: bold;
+              font-size: 18px;
+              line-height: 20px;
+            }
+          }
         }
         h1 {
           padding: 0 60px 0 90px;
@@ -196,9 +209,73 @@ body.single-program {
             margin: 20px 0 20px 0;
           }
         }
-        .date {
-          padding: 0 60px 20px 90px;
-          margin-top: 20px;
+      }
+      #itinerary {
+        display: block;
+        padding: 30px 0;
+
+        .wrapper {
+          max-width: 740px;
+          margin: 0 auto;
+          display: flex;
+          justify-content: space-between;
+          align-items: stretch;
+
+          & > div {
+            position: relative;
+            display: block;
+            padding: 5px 5px 5px 50px;
+            min-height: 52px;
+            box-sizing: border-box;
+            margin: 0 15px;
+
+            &:before {
+              content: "";
+              display: block;
+              position: absolute;
+              width: 32px;
+              height: 32px;
+              top: 12px;
+              left: 0;
+              background-position: center center;
+              background-size: contain;
+              background-repeat: no-repeat;
+            }
+
+
+            &.date {
+              &:before {
+                background-image: url($rootDir + "/assets/global/calendar-icon.svg");
+              }
+            }
+            &.time {
+              &:before {
+                background-image: url($rootDir + "/assets/global/clock-icon.svg");
+              }
+            }
+            &.location {
+              &:before {
+                background-image: url($rootDir + "/assets/global/geopin-icon.svg");
+              }
+            }
+            &.moderator {
+              &:before {
+                background-image: url($rootDir + "/assets/global/moderator-icon.svg");
+              }
+            }
+            p, a {
+              display: block;
+              font-style: normal;
+              font-weight: normal;
+              font-size: 16px;
+              line-height: 18px;
+              color: #908F8C;
+              margin: 0;
+              padding: 0;
+              padding-top: 10px;
+
+            }
+          }
         }
       }
     }

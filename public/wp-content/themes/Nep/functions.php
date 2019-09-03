@@ -85,6 +85,11 @@ if( function_exists('acf_add_options_page') ) {
 	));
 }
 
+add_action('acf/init', 'googleMapsApiKey');
+function googleMapsApiKey() {
+	acf_update_setting('google_api_key', GOOGLE_MAPS_API);
+}
+
 function attachmentSize(int $id): float {
 	$size = filesize(get_attached_file($id));
 	$size /= 1024;

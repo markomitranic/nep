@@ -56,11 +56,39 @@
 			        <?php endforeach; ?>
                 </ul>
 	        <?php endif; ?>
-            <ul class="programType">
-                <li>Predavanjessssssss s s s s ss ss</li>
-            </ul>
+	        <?php
+                /** @var WP_Term[] $categories */
+                $programTypes = get_the_terms($post->ID, 'vrsta');
+                if (!empty($programTypes)) :
+	        ?>
+                <ul class="programType">
+                    <?php foreach ($programTypes as $programType) : ?>
+                    <li>
+                        <a href="/program/?vrsta=<?=$programType->slug?>" title="Svi programi u kategoriji<?=$programType->name?>">
+                            <?=$programType->name?>
+                        </a>
+                    </li>
+                    <?php endforeach; ?>
+                </ul>
+            <?php endif; ?>
             <h1><?php the_title(); ?></h1>
-            <p class="date"><?=get_the_date()?></p>
+        </div>
+
+        <div id="itinerary">
+            <div class="wrapper">
+                <div class="date">
+                    <p>21.09.20321</p>
+                </div>
+                <div class="time">
+                    <p>18h</p>
+                </div>
+                <div class="location">
+                    <a href="#" title="Pregledaj na Maps aplikaciji" rel="nofollow" target="_blank">Nova Iskra DORCOL</a>
+                </div>
+                <div class="moderator">
+                    <a href="#" title="Profil moderatora NAna">Nana Radenkovič</a>
+                </div>
+            </div>
         </div>
 
 		<div id="post-content">

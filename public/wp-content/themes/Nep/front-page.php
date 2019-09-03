@@ -49,7 +49,7 @@
                 </a>
             </div>
             <div id="media">
-                <a href="/galerija/" title="Galerija media sadržaja za NEP programa">
+                <a href="/media/" title="Galerija media sadržaja za NEP programa">
                     <div class="image" style="background-image:url('<?=get_template_directory_uri()?>/assets/temp/media-naslovna.jpg');">
                         <img src="<?=get_template_directory_uri()?>/assets/temp/media-naslovna.jpg" alt="">
                     </div>

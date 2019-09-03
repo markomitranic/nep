@@ -33,14 +33,7 @@
             "type": "text",
             "instructions": "Ukoliko je autor ujedno i mentor sa nekog od NEP programa, ostavite ovo polje praznim i odaberite učesnicu\/ka u polju ispod.",
             "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_5d6ea5634b31c",
-                        "operator": "==empty"
-                    }
-                ]
-            ],
+            "conditional_logic": 0,
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -58,15 +51,8 @@
             "name": "autor-mentor",
             "type": "post_object",
             "instructions": "Ukoliko autor nije registrovani NEP mentor, ostavite ovo polje praznim i ručno upišite ime u polju iznad.",
-            "required": 1,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_5d6ea54e4b31b",
-                        "operator": "==empty"
-                    }
-                ]
-            ],
+            "required": 0,
+            "conditional_logic": 0,
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -101,5 +87,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1567532843
+    "modified": 1567542472
 }

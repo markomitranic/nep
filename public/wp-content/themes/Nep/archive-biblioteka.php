@@ -15,19 +15,7 @@
 			</a>
 		</div>
 		<div id="page-title">
-            <?php
-                switch ($participationType) {
-                    case 'alumni':
-                        $pageTitle = 'Alumni';
-                        break;
-                    case 'mentor':
-                        $pageTitle = 'Predavači i Mentori';
-                        break;
-                    default:
-                        $pageTitle = 'Učesnici';
-                }
-            ?>
-            <h1><?=$pageTitle?></h1>
+            <h1>Biblioteka</h1>
 			<div id="neps">
 				<ul>
 					<?php
@@ -71,21 +59,27 @@
 			</div>
 		</div>
 
-		<div id="programs-list">
+		<div id="library-list">
 			<?php if (have_posts()) : ?>
 				<ul>
 					<?php
-					while (have_posts()) :
-						the_post();
-						?>
+                        while (have_posts()) :
+                            the_post();
+
+                            /** @var WP_Post $authorParticipant */
+                            $authorParticipant = get_field('autor-mentor');
+                            /** @var string $authorScalarName */
+                            $authorScalarName = get_field('autor');
+                    ?>
 						<li>
 							<a href="<?=get_permalink()?>" title="Profil <?=get_the_title()?>">
-                                <?php $image = get_field('photo'); ?>
+                                <?php $image = get_field('istaknuta_slika'); ?>
 								<div class="image" style="background-image:url(<?=$image['sizes']['thumbnail']?>);">
 									<img src="<?=$image['sizes']['thumbnail']?>" alt="<?=$image['alt']?>">
 								</div>
 								<div class="info">
 									<h2><?=get_the_title()?></h2>
+                                    <p class="author"><?=($authorParticipant) ? $authorParticipant->post_title : $authorScalarName ;?></p>
 								</div>
 							</a>
 						</li>
@@ -93,7 +87,7 @@
 				</ul>
 			<?php else : ?>
 				<div id="no-results">
-					<p>Na žalost nema pronađenih učesnika na osnovu zadatih filtera.</p>
+					<p>Na žalost nema pronađenih unosa u biblioteci, na osnovu zadatih filtera.</p>
 
                     <img src="<?= get_template_directory_uri() ?>/assets/global/test-signal.svg" alt="Nep Test Signal">
 				</div>
