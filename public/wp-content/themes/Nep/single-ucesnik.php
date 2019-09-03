@@ -108,7 +108,7 @@ if (array_key_exists('tip_participacije', $_REQUEST)) {
             </div>
         </div>
         <?php
-            if (isParticipationType($post->ID, 'alumni')) :
+            if (isParticipationType($post->ID, 'alumni') && !isParticipationType($post->ID, 'mentor')) :
                 /** @var WP_Term[] $skills */
                 $skills = get_the_terms($post->ID, 'vestine');
                 if (!empty($nepPrograms)) :
@@ -132,15 +132,17 @@ if (array_key_exists('tip_participacije', $_REQUEST)) {
                     'post_type' => 'program',
                     'meta_query' =>[
                         [
-                            'key' => 'predavaci', // name of custom field
-                            'value' => '"' . $post->ID . '"', // matches exactly "123", not just 123. This prevents a match for "1234"
+                            'key' => 'predavaci',
+                            'value' => '"' . $post->ID . '"',
                             'compare' => 'LIKE'
                         ]
                     ]
                 ]);
+
+                if ($relatedProgramsQuery->have_posts()) :
         ?>
             <div id="programs-list">
-                <?php if ($relatedProgramsQuery->have_posts()) : ?>
+                    <h2>Aktivnosti</h2>
                     <ul>
                         <?php
                             while ( $relatedProgramsQuery->have_posts() ) :
@@ -189,9 +191,9 @@ if (array_key_exists('tip_participacije', $_REQUEST)) {
                             </li>
                         <?php endwhile; ?>
                     </ul>
-                <?php endif; ?>
             </div>
         <?php
+                endif;
             endif;
             wp_reset_postdata();
         ?>
