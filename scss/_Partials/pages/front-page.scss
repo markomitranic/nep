@@ -370,11 +370,8 @@ body.home.page {
                 background-size: cover;
                 background-position: center center;
                 background-repeat: no-repeat;
-                width: 58%;
+                width: 50%;
 
-                @media (max-width: 1050px) {
-                  width: 50%;
-                }
                 @media (max-width: 870px) {
                   order: 1;
                   width: 100%;
@@ -424,22 +421,13 @@ body.home.page {
                     padding: 0;
                     font-style: normal;
                     font-weight: bold;
-                    font-size: 64px;
-                    line-height: 70px;
+                    font-size: 34px;
+                    line-height: 40px;
                     text-transform: uppercase;
                     overflow-wrap: break-word;
                     word-wrap: break-word;
                     word-break: break-all;
                     hyphens: auto;
-
-                    @media (max-width: 1300px) {
-                      font-size: 44px;
-                      line-height: 50px;
-                    }
-                    @media (max-width: 1100px) {
-                      font-size: 34px;
-                      line-height: 40px;
-                    }
                   }
                 }
                 .signature {

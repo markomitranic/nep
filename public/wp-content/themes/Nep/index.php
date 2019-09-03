@@ -47,8 +47,8 @@
                 ?>
                 <li>
                     <a href="<?=get_permalink()?>" title="<?=get_the_title()?>">
-                        <div class="image" style="background-image:url('<?=get_template_directory_uri()?>/assets/temp/vesti-naslovna.png');">
-                            <img src="<?=get_template_directory_uri()?>/assets/temp/vesti-naslovna.png" alt="">
+                        <div class="image" style="background-image:url('<?=get_field('hero_image')['sizes']['medium']?>');">
+                            <img src="<?=get_field('hero_image')['sizes']['medium']?>" alt="<?=get_field('hero_image')['alt']?>">
                         </div>
                         <div class="info">
                             <h2><?=get_the_title()?></h2>
@@ -76,8 +76,8 @@
                     ?>
                     <li>
                         <a href="#" title="">
-                            <div class="image" style="background-image:url('<?=get_template_directory_uri()?>/assets/temp/vesti-naslovna.png');">
-                                <img src="<?=get_template_directory_uri()?>/assets/temp/vesti-naslovna.png" alt="">
+                            <div class="image" style="background-image:url('<?=get_field('hero_image')['sizes']['medium']?>');">
+                                <img src="<?=get_field('hero_image')['sizes']['medium']?>" alt="<?=get_field('hero_image')['alt']?>">
                             </div>
                             <div class="info">
                                 <h2><?=get_the_title()?></h2>
