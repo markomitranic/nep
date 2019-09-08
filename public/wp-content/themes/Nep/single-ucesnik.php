@@ -64,14 +64,11 @@ if (array_key_exists('tip_participacije', $_REQUEST)) {
 							<?php
                                 $nepProgramName = null;
 
-                                if (!($nepProgramLink = get_category_link($nepProgram->term_id))) {
-                                    $nepProgramLink = null;
-                                }
                                 if (!($nepProgramColor = get_field('color', $nepProgram->taxonomy . '_' . $nepProgram->term_id))) {
                                     $nepProgramColor = 'aubergine';
                                 }
 							?>
-							<a href="<?=$nepProgramLink?>" class="category" style="background-color: <?=$nepProgramColor?>">
+							<a href="<?='/program/?nep=' . $nepProgram->slug?>" class="category" style="background-color: <?=$nepProgramColor?>">
 								<span style="border-right-color: <?=$nepProgramColor?>"></span>
 								<p class="shouldShave" data-rows="1">#<?=$nepProgram->name?></p>
 							</a>
