@@ -1,19 +1,40 @@
-# Translation of Themes - Twenty Seventeen in Serbian
-# This file is distributed under the same license as the Themes - Twenty Seventeen package.
+# Translation of the WordPress theme Twenty Seventeen to Serbian.
+# Copyright (C) 2016 the WordPress team
+# This file is distributed under the GNU General Public License v2 or later.
+# Milan Dinić <milan@srpski.biz> 2016
+#
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2019-02-21 21:58:08+0000\n"
+"Project-Id-Version: Themes - Twenty Seventeen\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2019-02-21 23:18+0100\n"
+"Last-Translator: Milan Dinić <milan@srpski.biz>\n"
+"Language-Team: \n"
+"Language: sr_RS\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: GlotPress/2.4.0-alpha\n"
-"Language: sr_RS\n"
-"Project-Id-Version: Themes - Twenty Seventeen\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Poedit 2.2.1\n"
 
 #. Description of the theme
-msgid "Twenty Seventeen brings your site to life with header video and immersive featured images. With a focus on business sites, it features multiple sections on the front page as well as widgets, navigation and social menus, a logo, and more. Personalize its asymmetrical grid with a custom color scheme and showcase your multimedia content with post formats. Our default theme for 2017 works great in many languages, for any abilities, and on any device."
-msgstr "Twenty Seventeen доноси удахнyће у живот у вашем веб месту са видео заглављима и великим истакнутим сликама. Са усредсређењем на веб местима предузећа, она има више одељака на насловној страници, као и виџете, кретање и друштвене изборнике, логотип и још много тога. Прилагодите својy асиметричнy мрежу са прилагођеном шемом боја и представите свој мултимедијални садржај са облицима чланака. Наша подразумевана тема за 2017 ради одлично на многим језицима, за све способности и на било ком уређају."
+msgid ""
+"Twenty Seventeen brings your site to life with header video and immersive "
+"featured images. With a focus on business sites, it features multiple "
+"sections on the front page as well as widgets, navigation and social menus, "
+"a logo, and more. Personalize its asymmetrical grid with a custom color "
+"scheme and showcase your multimedia content with post formats. Our default "
+"theme for 2017 works great in many languages, for any abilities, and on any "
+"device."
+msgstr ""
+"Twenty Seventeen доноси удахнyће у живот у вашем веб месту са видео "
+"заглављима и великим истакнутим сликама. Са усредсређењем на веб местима "
+"предузећа, она има више одељака на насловној страници, као и виџете, кретање "
+"и друштвене изборнике, логотип и још много тога. Прилагодите својy "
+"асиметричнy мрежу са прилагођеном шемом боја и представите свој "
+"мултимедијални садржај са облицима чланака. Наша подразумевана тема за 2017 "
+"ради одлично на многим језицима, за све способности и на било ком уређају."
 
 #. Theme Name of the theme
 msgid "Twenty Seventeen"
@@ -24,8 +45,11 @@ msgid "Footer"
 msgstr "Подножје"
 
 #: functions.php:338
-msgid "Add widgets here to appear in your sidebar on blog posts and archive pages."
-msgstr "Овде додајте виџете како би се појавили у вашој бочној траци на чланцима блога и на страницама архива."
+msgid ""
+"Add widgets here to appear in your sidebar on blog posts and archive pages."
+msgstr ""
+"Овде додајте виџете како би се појавили у вашој бочној траци на чланцима "
+"блога и на страницама архива."
 
 #: sidebar.php:18 functions.php:336
 msgid "Blog Sidebar"
@@ -64,8 +88,12 @@ msgid "Front Page Section %1$s Placeholder"
 msgstr "Држач одељка %1$s почетне странице"
 
 #: inc/customizer.php:109
-msgid "When the two-column layout is assigned, the page title is in one column and content is in the other."
-msgstr "Када је додељен распоред од два ступца, наслов странице је у једном ступцу а садржај у другом."
+msgid ""
+"When the two-column layout is assigned, the page title is in one column and "
+"content is in the other."
+msgstr ""
+"Када је додељен распоред од два ступца, наслов странице је у једном ступцу а "
+"садржај у другом."
 
 #: single.php:34
 msgid "Next Post"
@@ -107,8 +135,14 @@ msgid "Please define default parameters in the form of an array."
 msgstr "Молимо вас да одредите подразумеване параметре у облику низа."
 
 #: inc/customizer.php:143
-msgid "Select pages to feature in each area from the dropdowns. Add an image to a section by setting a featured image in the page editor. Empty sections will not be displayed."
-msgstr "Одаберите странице за издвајање у сваком простору из падајућих. Додајте слику одељку подешавајући издвојену слику у уређивачу стране. Празни одељци се неће приказивати."
+msgid ""
+"Select pages to feature in each area from the dropdowns. Add an image to a "
+"section by setting a featured image in the page editor. Empty sections will "
+"not be displayed."
+msgstr ""
+"Одаберите странице за издвајање у сваком простору из падајућих. Додајте "
+"слику одељку подешавајући издвојену слику у уређивачу стране. Празни одељци "
+"се неће приказивати."
 
 #. translators: %d is the front page section number
 #: inc/customizer.php:142
@@ -164,8 +198,8 @@ msgctxt "Libre Franklin font: on or off"
 msgid "on"
 msgstr "off"
 
-#: template-parts/navigation/navigation-top.php:12 functions.php:64
-#: functions.php:203
+#: functions.php:64 functions.php:203
+#: template-parts/navigation/navigation-top.php:12
 msgid "Top Menu"
 msgstr "Изборник на врху"
 
@@ -174,18 +208,29 @@ msgid "Reply"
 msgstr "Одговор"
 
 #: template-parts/post/content-none.php:28
-msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
-msgstr "Изгледа да не можемо да пронађемо оно што сте тражили. Можда ће претраживање помоћи."
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+"Изгледа да не можемо да пронађемо оно што сте тражили. Можда ће претраживање "
+"помоћи."
 
 #: search.php:54
-msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
-msgstr "Жао нам је, али ништа не одговара вашем упиту. Молимо вас да покушате поново са другим кључним речима."
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+"Жао нам је, али ништа не одговара вашем упиту. Молимо вас да покушате поново "
+"са другим кључним речима."
 
 #: template-parts/post/content-none.php:24
-msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
-msgstr "Спремни сте да објавите свој први чланак? <a href=\"%1$s\">Започните овде</a>."
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+"Спремни сте да објавите свој први чланак? <a href=\"%1$s\">Започните овде</"
+"a>."
 
-#: template-parts/post/content-none.php:17 search.php:21
+#: search.php:21 template-parts/post/content-none.php:17
 msgid "Nothing Found"
 msgstr "Ништа није пронађено"
 
@@ -221,12 +266,12 @@ msgid "Search Results for: %s"
 msgstr "Резултати претраживања за: %s"
 
 #. translators: %s: Name of current post
-#: template-parts/page/content-front-page-panels.php:45
-#: template-parts/page/content-front-page.php:42
-#: template-parts/post/content-audio.php:84 template-parts/post/content.php:57
-#: template-parts/post/content-gallery.php:71
+#: functions.php:390 template-parts/post/content-gallery.php:71
+#: template-parts/post/content.php:57 template-parts/post/content-image.php:61
+#: template-parts/post/content-audio.php:84
 #: template-parts/post/content-video.php:83
-#: template-parts/post/content-image.php:61 functions.php:390
+#: template-parts/page/content-front-page.php:42
+#: template-parts/page/content-front-page-panels.php:45
 msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
 msgstr "Настави са читањем<span class=\"screen-reader-text\"> \"%s\"</span>"
 
@@ -235,19 +280,23 @@ msgid "Dark"
 msgstr "Тамна"
 
 #: inc/back-compat.php:39 inc/back-compat.php:52 inc/back-compat.php:70
-msgid "Twenty Seventeen requires at least WordPress version 4.7. You are running version %s. Please upgrade and try again."
-msgstr "Twenty Seventeen захтева издање најмање Вордпрес 4.7 Користите издање %s. Молимо вас да ажурирате и покушате поново."
+msgid ""
+"Twenty Seventeen requires at least WordPress version 4.7. You are running "
+"version %s. Please upgrade and try again."
+msgstr ""
+"Twenty Seventeen захтева издање најмање Вордпрес 4.7 Користите издање %s. "
+"Молимо вас да ажурирате и покушате поново."
 
 #. translators: %s: Name of current post
 #: inc/template-tags.php:117
 msgid "Edit<span class=\"screen-reader-text\"> \"%s\"</span>"
 msgstr "Уреди<span class=\"screen-reader-text\"> \"%s\"</span>"
 
-#: template-parts/page/content-page.php:26
-#: template-parts/post/content-audio.php:91 template-parts/post/content.php:64
 #: template-parts/post/content-gallery.php:78
+#: template-parts/post/content.php:64 template-parts/post/content-image.php:68
+#: template-parts/post/content-audio.php:91
 #: template-parts/post/content-video.php:90
-#: template-parts/post/content-image.php:68
+#: template-parts/page/content-page.php:26
 msgid "Pages:"
 msgstr "Стране:"
 
@@ -255,7 +304,7 @@ msgstr "Стране:"
 msgid "Menu"
 msgstr "Изборник"
 
-#: header.php:28
+#: header.php:27
 msgid "Skip to content"
 msgstr "Скочи на садржај"
 
@@ -298,7 +347,7 @@ msgctxt "comments title"
 msgid "One Reply to &ldquo;%s&rdquo;"
 msgstr "Један одговор на &#0132;%s&#0147;"
 
-#: archive.php:50 search.php:47 index.php:54
+#: index.php:54 archive.php:50 search.php:47
 msgid "Page"
 msgstr "Страна"
 
@@ -308,13 +357,15 @@ msgstr "Упс! Та страница не може бити пронађена.
 
 #: 404.php:24
 msgid "It looks like nothing was found at this location. Maybe try a search?"
-msgstr "Изгледа да ништа није пронађено на овом месту. Можда да покушате претраживање?"
+msgstr ""
+"Изгледа да ништа није пронађено на овом месту. Можда да покушате "
+"претраживање?"
 
-#: archive.php:48 search.php:45 index.php:52
+#: index.php:52 archive.php:48 search.php:45
 msgid "Previous page"
 msgstr "Претходна страна"
 
-#: archive.php:49 search.php:46 index.php:53
+#: index.php:53 archive.php:49 search.php:46
 msgid "Next page"
 msgstr "Следећа страна"
 
@@ -330,3 +381,6 @@ msgstr "https://sr.wordpress.org/themes/twentyseventeen/"
 #: template-parts/footer/site-info.php:18
 msgid "https://wordpress.org/"
 msgstr "https://sr.wordpress.org/"
+
+#~ msgid "Scroll Down"
+#~ msgstr "Крени доле"
