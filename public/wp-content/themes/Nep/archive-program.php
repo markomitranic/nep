@@ -13,11 +13,11 @@
 				<ul>
                     <?php
                         /** @var WP_Term[] $categories */
-                        $categories = get_terms('vrsta');
-                        foreach ($categories as $category) :
-                            $isActive = (array_key_exists('vrsta', $_REQUEST) && $category->slug === $_REQUEST['vrsta']) ? true : false;
+                        $programs = get_terms('nep');
+                        foreach ($programs as $program) :
+                            $isActive = (array_key_exists('nep', $_REQUEST) && $program->slug === $_REQUEST['nep']) ? true : false;
                     ?>
-                        <li <?=($isActive) ? 'class="active"' : ''?>><a href="?<?=addToQueryString(['vrsta' => $category->slug])?>"><?=$category->name?></a></li>
+                        <li <?=($isActive) ? 'class="active"' : ''?>><a href="?<?=addToQueryString(['nep' => $program->slug])?>"><?=$program->name?></a></li>
                     <?php endforeach; ?>
 				</ul>
 			</div>
@@ -35,24 +35,24 @@
                     <label class="screen-reader-text" for="nep">Pretraga za:</label>
 					<?php
                         $searchQuery = '';
-                        if (array_key_exists('nep', $_REQUEST)) {
-                            $programQuery = $_REQUEST['nep'];
+                        if (array_key_exists('vrsta', $_REQUEST)) {
+                            $programTypeQuery = $_REQUEST['vrsta'];
                         }
 					?>
-                    <select name="nep" id="nep" onchange="this.form.submit()">
+                    <select name="vrsta" id="vrsta" onchange="this.form.submit()">
                         <option disabled selected value>---</option>
 						<?php
                             /** @var WP_Term[] $categories */
-                            $categories = get_terms('nep');
+                            $categories = get_terms('vrsta');
                             foreach ($categories as $category) :
-                                $isActive = ($category->slug === $programQuery) ? true : false;
+                                $isActive = ($category->slug === $programTypeQuery) ? true : false;
                         ?>
                             <option value="<?=$category->slug?>" <?=($isActive) ? 'selected' : ''?>><?=$category->name?></option>
 						<?php endforeach; ?>
                     </select>
 
-					<?php if (array_key_exists('vrsta', $_REQUEST)) : ?>
-                        <input type="hidden" value="<?=$_REQUEST['vrsta']?>" name="vrsta" id="vrsta">
+					<?php if (array_key_exists('nep', $_REQUEST)) : ?>
+                        <input type="hidden" value="<?=$_REQUEST['nep']?>" name="nep" id="nep">
 					<?php endif; ?>
 					<?php if (array_key_exists('s', $_REQUEST)) : ?>
                         <input type="hidden" value="<?=$_REQUEST['s']?>" name="s" id="s">
