@@ -126,13 +126,19 @@ if (array_key_exists('tip_participacije', $_REQUEST)) {
             if (isParticipationType($post->ID, 'mentor')) :
                 $relatedProgramsQuery = new WP_Query([
                     'posts_per_page' => 20,
-                    'post_type' => 'program',
+                    'post_type' => ['program', 'biblioteka'],
                     'meta_query' =>[
+	                    'relation' => 'OR',
                         [
-                            'key' => 'predavaci',
-                            'value' => '"' . $post->ID . '"',
+                            'key' => 'autor-mentor',
+                            'value' => $post->ID,
                             'compare' => 'LIKE'
-                        ]
+                        ],
+	                    [
+		                    'key' => 'predavaci',
+		                    'value' => $post->ID,
+		                    'compare' => 'LIKE'
+	                    ]
                     ]
                 ]);
 
@@ -160,32 +166,52 @@ if (array_key_exists('tip_participacije', $_REQUEST)) {
                                     $typeName = $types[0]->name;
                                     $typeColor = get_field('color', $types[0]->taxonomy . '_' . $types[0]->term_id);
                                 }
-                            ?>
-                            <li>
-                                <a href="<?=get_permalink()?>" title="Profil <?=get_the_title()?>">
-                                    <?php $image = get_field('photo'); ?>
-                                    <div class="image" style="background-image:url(<?=$image['sizes']['thumbnail']?>);">
-                                        <?php if (!is_null($programName)) : ?>
-                                            <div class="program" style="background-color: <?=$programColor?>">
-                                                <span style="border-left-color: <?=$programColor?>"></span>
-                                                <p>#<?=$programName?></p>
+
+                                if ($post->post_type === 'biblioteka') :
+	                                /** @var WP_Post $authorParticipant */
+	                                $authorParticipant = get_field('autor-mentor');
+	                                /** @var string $authorScalarName */
+	                                $authorScalarName = get_field('autor');
+                        ?>
+                                    <li>
+                                        <a href="<?=get_permalink()?>" title="Profil <?=get_the_title()?>">
+			                                <?php $image = get_field('istaknuta_slika'); ?>
+                                            <div class="image" style="background-image:url(<?=$image['sizes']['thumbnail']?>);">
+                                                <img src="<?=$image['sizes']['thumbnail']?>" alt="<?=$image['alt']?>">
                                             </div>
-                                        <?php endif; ?>
-                                        <?php if (!is_null($typeName)) : ?>
-                                            <div class="type" style="background-color: <?=$typeColor?>">
-                                                <span style="border-right-color: <?=$typeColor?>"></span>
-                                                <p class="shouldShave" data-rows="1"><?=$typeName?></p>
+                                            <div class="info">
+                                                <h2><?=get_the_title()?></h2>
+                                                <p class="author"><?=($authorParticipant) ? $authorParticipant->post_title : $authorScalarName ;?></p>
                                             </div>
-                                        <?php endif; ?>
-                                        <img src="<?=$image['sizes']['thumbnail']?>" alt="<?=$image['alt']?>">
-                                    </div>
-                                    <div class="info">
-                                        <p class="date"><?=get_field('datum')?></p>
-                                        <h2><?=get_the_title()?></h2>
-                                        <p class="excerpt shouldShave" data-rows="6"><?=getExcerpt(get_the_excerpt(), 20)?></p>
-                                    </div>
-                                </a>
-                            </li>
+                                        </a>
+                                    </li>
+                                <?php else : ?>
+                                    <li>
+                                        <a href="<?=get_permalink()?>" title="Profil <?=get_the_title()?>">
+                                            <?php $image = get_field('photo'); ?>
+                                            <div class="image" style="background-image:url(<?=$image['sizes']['thumbnail']?>);">
+                                                <?php if (!is_null($programName)) : ?>
+                                                    <div class="program" style="background-color: <?=$programColor?>">
+                                                        <span style="border-left-color: <?=$programColor?>"></span>
+                                                        <p>#<?=$programName?></p>
+                                                    </div>
+                                                <?php endif; ?>
+                                                <?php if (!is_null($typeName)) : ?>
+                                                    <div class="type" style="background-color: <?=$typeColor?>">
+                                                        <span style="border-right-color: <?=$typeColor?>"></span>
+                                                        <p class="shouldShave" data-rows="1"><?=$typeName?></p>
+                                                    </div>
+                                                <?php endif; ?>
+                                                <img src="<?=$image['sizes']['thumbnail']?>" alt="<?=$image['alt']?>">
+                                            </div>
+                                            <div class="info">
+                                                <p class="date"><?=get_field('datum')?></p>
+                                                <h2><?=get_the_title()?></h2>
+                                                <p class="excerpt shouldShave" data-rows="6"><?=getExcerpt(get_the_excerpt(), 20)?></p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                <?php endif; ?>
                         <?php endwhile; ?>
                     </ul>
             </div>
