@@ -6,3 +6,4 @@ import './domain/supernova';
 import './domain/shave';
 import './domain/frontpage-news';
 import './domain/content-block-slider';
+import './domain/galerija-masonry';
