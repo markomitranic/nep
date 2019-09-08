@@ -76,28 +76,41 @@
 
         <div id="itinerary">
             <div class="wrapper">
-                <div class="date">
-                    <p><?=get_field('datum')?></p>
-                </div>
-                <div class="time">
-                    <p><?=get_field('vreme')?></p>
-                </div>
-                <div class="location">
-                    <a href="<?=get_field('url_lokacije')?>" title="Pregledaj na Maps aplikaciji" rel="nofollow" target="_blank"><?=get_field('naziv_lokacije')?></a>
-                </div>
-                <div class="moderator">
-                    <ul>
-	                    <?php
-                            /** @var WP_Post[] $moderators */
-                            $moderators = get_field('predavaci');
-                            foreach ($moderators as $moderator) :
-	                    ?>
-                            <li>
-                                <a href="<?=get_the_permalink($moderator->ID)?>" title="Profil moderatora <?=$moderator->post_title?>"><?=$moderator->post_title?></a>
-                            </li>
-                        <?php endforeach;?>
-                    </ul>
-                </div>
+
+	            <?php if(get_field('datum')) : ?>
+                    <div class="date">
+                        <p><?=get_field('datum')?></p>
+                    </div>
+                <?php endif; ?>
+
+                <?php if(get_field('vreme')) : ?>
+                    <div class="time">
+                        <p><?=get_field('vreme')?></p>
+                    </div>
+                <?php endif; ?>
+
+                <?php if(get_field('url_lokacije')) : ?>
+                    <div class="location">
+                        <a href="<?=get_field('url_lokacije')?>" title="Pregledaj na Maps aplikaciji" rel="nofollow" target="_blank"><?=get_field('naziv_lokacije')?></a>
+                    </div>
+                <?php endif; ?>
+
+                <?php
+                    /** @var WP_Post[] $moderators */
+                    $moderators = get_field('predavaci');
+                    if ($moderators) :
+                ?>
+                    <div class="moderator">
+                        <ul>
+                            <?php foreach ($moderators as $moderator) : ?>
+                                <li>
+                                    <a href="<?=get_the_permalink($moderator->ID)?>" title="Profil moderatora <?=$moderator->post_title?>"><?=$moderator->post_title?></a>
+                                </li>
+                            <?php endforeach;?>
+                        </ul>
+                    </div>
+                <?php endif; ?>
+
             </div>
         </div>
 
@@ -105,44 +118,46 @@
             <?php the_content(); ?>
 		</div>
 
-        <div id="moderators">
-            <h2>Predavači:</h2>
-            <ul>
-	            <?php
-                    /** @var WP_Post[] $moderators */
-                    $moderators = get_field('predavaci');
-                    foreach ($moderators as $moderator) :
-	            ?>
-                    <li class="moderator">
-                        <div class="portrait">
-                            <?php if ($portrait = get_field('photo', $moderator->ID)) : ?>
-                                <img src="<?=$portrait['sizes']['medium']?>" alt="<?=$portrait['alt']?>">
-                            <?php endif; ?>
-                            <h3>
-                                <a href="<?=get_the_permalink($moderator->ID)?>", title="Pregled profila <?=$moderator->post_title ?>">
-	                                <?=$moderator->post_title ?>
-                                </a>
-                            </h3>
-                            <?php if ($jobTitle = get_field('title', $moderator->ID)) : ?>
-                                <p class="job-title"><?=$jobTitle?></p>
-                            <?php endif; ?>
-                        </div>
-                        <div class="post-content">
-	                        <p><?=getExcerpt($moderator->post_content, 80, true); ?></p>
-                            <?php if ($links = get_field('linkovi', $moderator->ID)) : ?>
-                                <ul class="links">
-                                    <?php foreach ($links as $link) : ?>
-                                        <li>
-                                            <a href="<?=$link['url']?>" target="_blank" rel="nofollow"><?=$link['label']?></a>
-                                        </li>
-                                    <?php endforeach; ?>
-                                </ul>
-                            <?php endif; ?>
-                        </div>
-                    </li>
-                <?php endforeach; ?>
-            </ul>
-        </div>
+		<?php
+            /** @var WP_Post[] $moderators */
+            $moderators = get_field('predavaci');
+            if ($moderators) :
+		?>
+            <div id="moderators">
+                <h2>Predavači:</h2>
+                <ul>
+                    <?php foreach ($moderators as $moderator) : ?>
+                        <li class="moderator">
+                            <div class="portrait">
+                                <?php if ($portrait = get_field('photo', $moderator->ID)) : ?>
+                                    <img src="<?=$portrait['sizes']['medium']?>" alt="<?=$portrait['alt']?>">
+                                <?php endif; ?>
+                                <h3>
+                                    <a href="<?=get_the_permalink($moderator->ID)?>", title="Pregled profila <?=$moderator->post_title ?>">
+                                        <?=$moderator->post_title ?>
+                                    </a>
+                                </h3>
+                                <?php if ($jobTitle = get_field('title', $moderator->ID)) : ?>
+                                    <p class="job-title"><?=$jobTitle?></p>
+                                <?php endif; ?>
+                            </div>
+                            <div class="post-content">
+                                <p><?=getExcerpt($moderator->post_content, 80, true); ?></p>
+                                <?php if ($links = get_field('linkovi', $moderator->ID)) : ?>
+                                    <ul class="links">
+                                        <?php foreach ($links as $link) : ?>
+                                            <li>
+                                                <a href="<?=$link['url']?>" target="_blank" rel="nofollow"><?=$link['label']?></a>
+                                            </li>
+                                        <?php endforeach; ?>
+                                    </ul>
+                                <?php endif; ?>
+                            </div>
+                        </li>
+                    <?php endforeach; ?>
+                </ul>
+            </div>
+        <?php endif; ?>
 
 	</main>
 </div>
