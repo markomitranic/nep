@@ -3,6 +3,30 @@
     "title": "Program",
     "fields": [
         {
+            "key": "field_5d657caa1a223",
+            "label": "Predavači",
+            "name": "predavaci",
+            "type": "post_object",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "100",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "ucesnik"
+            ],
+            "taxonomy": [
+                "tip_participacije:mentor"
+            ],
+            "allow_null": 0,
+            "multiple": 1,
+            "return_format": "object",
+            "ui": 1
+        },
+        {
             "key": "field_5d657b57bd9df",
             "label": "Istaknuta Slika",
             "name": "photo",
@@ -11,7 +35,7 @@
             "required": 1,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "50",
                 "class": "",
                 "id": ""
             },
@@ -35,7 +59,7 @@
             "required": 1,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "50",
                 "class": "",
                 "id": ""
             },
@@ -52,7 +76,7 @@
             "required": 1,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "50",
                 "class": "",
                 "id": ""
             },
@@ -68,7 +92,7 @@
             "required": 1,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "50",
                 "class": "",
                 "id": ""
             },
@@ -87,36 +111,12 @@
             "required": 1,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "50",
                 "class": "",
                 "id": ""
             },
             "default_value": "",
             "placeholder": "https:\/\/maps.google.com\/xxxxx"
-        },
-        {
-            "key": "field_5d657caa1a223",
-            "label": "Predavači",
-            "name": "predavaci",
-            "type": "post_object",
-            "instructions": "",
-            "required": 1,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "post_type": [
-                "ucesnik"
-            ],
-            "taxonomy": [
-                "tip_participacije:mentor"
-            ],
-            "allow_null": 0,
-            "multiple": 1,
-            "return_format": "object",
-            "ui": 1
         }
     ],
     "location": [
@@ -129,12 +129,12 @@
         ]
     ],
     "menu_order": 0,
-    "position": "side",
+    "position": "acf_after_title",
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1567547182
+    "modified": 1567943863
 }
