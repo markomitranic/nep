@@ -133,7 +133,7 @@
 				</ul>
 			<?php else : ?>
 				<div id="no-results">
-					<p>Na žalost nema pronađenih učesnika na osnovu zadatih filtera.</p>
+					<p>Na žalost nema pronađenih programa na osnovu zadatih filtera. <a href="?" rel="nofollow" title="Poništi sve filtere">Poništi sve filtere ></a></p>
 
                     <img src="<?= get_template_directory_uri() ?>/assets/global/test-signal.svg" alt="Nep Test Signal">
 				</div>
