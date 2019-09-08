@@ -35,12 +35,12 @@ if (array_key_exists('tip_participacije', $_REQUEST)) {
             <div id="categories">
                 <ul>
 		            <?php
-		            /** @var WP_Term[] $categories */
-		            $categories = get_terms('nep');
-		            foreach ($categories as $category) :
-			            $isActive = (array_key_exists('nep', $_REQUEST) && $category->slug === $_REQUEST['nep']) ? true : false;
-			            ?>
-                        <li <?=($isActive) ? 'class="active"' : ''?>><a href="/ucesnik/?nep=<?=$category->slug?>"><?=$category->name?></a></li>
+                        /** @var WP_Term[] $categories */
+                        $categories = get_terms('nep');
+                        foreach ($categories as $category) :
+                            $isActive = (array_key_exists('nep', $_REQUEST) && $category->slug === $_REQUEST['nep']) ? true : false;
+                    ?>
+                            <li <?=($isActive) ? 'class="active"' : ''?>><a href="<?=$participationTypeLink . '&nep=' . $category->slug?>"><?=$category->name?></a></li>
 		            <?php endforeach; ?>
                 </ul>
             </div>
