@@ -145,6 +145,7 @@ body.page-template-page-galerija {
           iframe {
             width: 100%;
             height: 100%;
+            background-color: black; // Vimeo does transparent for some reason
           }
         }
       }
