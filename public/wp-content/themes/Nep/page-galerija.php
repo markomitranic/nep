@@ -109,7 +109,19 @@ get_header();
                             <a href="<?=$contentItem['image']['url']?>" target="_blank" title="Otvori u novom tabu">
                                 <div class="wrapper">
                                     <img src="<?=$contentItem['image']['sizes']['medium']?>" alt="<?=$contentItem['image']['alt']?>">
-                                    <p>#NEP2 - Ekskurzija</p>
+                                    <?php
+                                        $label = '#';
+                                        $nep = get_term($contentItem['nep']);
+                                        if ($nep) {
+                                            $label .= $nep->name;
+                                        }
+
+                                        $activity = get_term($contentItem['vrsta_aktivnosti']);
+                                        if ($activity) {
+                                            $label .= ' - ' . $activity->name;
+                                        }
+                                    ?>
+                                    <p><?=$label?></p>
                                 </div>
                             </a>
                         <?php elseif ($contentItem['acf_fc_layout'] === 'embed_youtube_vimeo') : ?>
