@@ -19,7 +19,7 @@ services:
       - mysql
     networks:
       - nep
-w
+
   php:
     container_name: nep_php
     restart: always

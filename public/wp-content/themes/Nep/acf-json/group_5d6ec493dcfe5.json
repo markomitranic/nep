@@ -3,10 +3,10 @@
     "title": "Front Page",
     "fields": [
         {
-            "key": "field_5d6ec4a8e51a4",
-            "label": "Istaknuti Program",
-            "name": "istaknuti_program",
-            "type": "post_object",
+            "key": "field_5d83eee06ba80",
+            "label": "Istaknuti Članak iz Biblioteke",
+            "name": "",
+            "type": "tab",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -15,14 +15,8 @@
                 "class": "",
                 "id": ""
             },
-            "post_type": [
-                "program"
-            ],
-            "taxonomy": "",
-            "allow_null": 1,
-            "multiple": 0,
-            "return_format": "object",
-            "ui": 1
+            "placement": "top",
+            "endpoint": 0
         },
         {
             "key": "field_5d6ec4d77c7e8",
@@ -45,6 +39,70 @@
             "multiple": 0,
             "return_format": "object",
             "ui": 1
+        },
+        {
+            "key": "field_5d83ee586ba7e",
+            "label": "Opis Članka iz Biblioteke",
+            "name": "opis_clanka_iz_biblioteke",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5d6ec4d77c7e8",
+                        "operator": "!=empty"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "\"Design creates culture. Culture shapes values. Values determine the future.\" \r\n\r\n— Robert L. Peters, designer and author",
+            "tabs": "visual",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 1
+        },
+        {
+            "key": "field_5d83eec76ba7f",
+            "label": "Istaknuti Program",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_5d6ec4a8e51a4",
+            "label": "Istaknuti Program",
+            "name": "istaknuti_program",
+            "type": "post_object",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "program"
+            ],
+            "taxonomy": "",
+            "allow_null": 1,
+            "multiple": 0,
+            "return_format": "object",
+            "ui": 1
         }
     ],
     "location": [
@@ -57,12 +115,12 @@
         ]
     ],
     "menu_order": 0,
-    "position": "side",
+    "position": "acf_after_title",
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1567540481
+    "modified": 1568927478
 }

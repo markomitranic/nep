@@ -299,6 +299,17 @@ body.home.page {
           &#media {
             background-color: #CBF574;
 
+            // Fixes for bad slider behavior wherein height would be set to auto.
+            .tns-outer {
+              height: 15vw;
+              .tns-inner {
+                height: 100%;
+                .tns-slider, .tns-gallery {
+                  height: 100%;
+                }
+              }
+            }
+
             a {
               display: block;
               height: 100%;
@@ -317,6 +328,8 @@ body.home.page {
                 background-position: center center;
                 background-repeat: no-repeat;
                 height: 15vw;
+                z-index: 0;
+                position: absolute;
 
                 @media (max-width: 580px) {
                   height: 40vw;
@@ -374,6 +387,51 @@ body.home.page {
             background-position: center center;
             background-size: cover;
             background-repeat: no-repeat;
+          }
+          &#library {
+            display: block;
+            width: 100%;
+
+            .quote-wrapper {
+              display: block;
+              font-style: normal;
+              font-weight: normal;
+              font-size: 28px;
+              line-height: 50px;
+              text-align: center;
+            }
+            .article-read-more {
+              display: block;
+              text-align: right;
+              text-decoration: none;
+              color: black;
+              font-style: normal;
+              font-weight: normal;
+              font-size: 15px;
+              line-height: 22px;
+              padding: 5px 5px 20px 5px;
+              width: 100%;
+              margin: 0 auto;
+
+              &::before {
+                content: "";
+                display: inline-block;
+                width: 22px;
+                height: 15px;
+                vertical-align: text-bottom;
+                background-image: url($rootDir + 'assets/global/arrow-right.svg');
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center center;
+                transform: translateX(0);
+                transition: 0.2s transform ease-in-out;
+                margin-right: 10px;
+              }
+
+              &:hover::before {
+                transform: translateX(-10px);
+              }
+            }
           }
           &#event {
             background-color: #438B76;

@@ -17,7 +17,7 @@
 					foreach ($categories as $category) :
 						$isActive = (array_key_exists('vrsta', $_REQUEST) && $category->slug === $_REQUEST['vrsta']) ? true : false;
 						?>
-                        <li <?=($isActive) ? 'class="active"' : ''?>><a href="?<?=addToQueryString(['vrsta' => $category->slug])?>"><?=$category->name?></a></li>
+                        <li <?=($isActive) ? 'class="active"' : ''?>><a href="/program?vrsta=<?=$category->slug?>"><?=$category->name?></a></li>
 					<?php endforeach; ?>
                 </ul>
             </div>
