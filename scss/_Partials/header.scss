@@ -99,6 +99,25 @@ body {
           @media (max-width: 820px) {
             width: 100%;
           }
+          
+          &.orange a:hover {
+            border-color: #F34626;
+          }
+          &.gray a:hover {
+            border-color: #7F7A8F;
+          }
+          &.lilac a:hover {
+            border-color: #DCC0DD;
+          }
+          &.dull-yellow  a:hover {
+            border-color: #999A34;
+          }
+          &.red a:hover {
+            border-color: #923334;
+          }
+          &.uranium a:hover {
+            border-color: #CBF573;
+          }
 
           a {
             font-style: normal;
@@ -109,6 +128,7 @@ body {
             color: black;
             text-transform: uppercase;
             padding: 5px 10px;
+            border-bottom: 2px solid transparent;
 
             @media (max-width: 1200px) {
               display: block;
@@ -121,7 +141,7 @@ body {
             }
 
             &:hover {
-              text-decoration: underline;
+              border-bottom: 2px solid;
             }
           }
         }
