@@ -222,8 +222,10 @@ body {
         flex: 1;
         padding: 20px 80px 20px 45px;
         display: flex;
-        justify-content: flex-start;
-        align-items: center;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
 
         @media (max-width: 930px) {
           padding: 20px 50px;
