@@ -88,11 +88,25 @@
                     </div>
 
                     <div class="info">
-                        <h2>Media</h2>
+                        <h2>Galerija</h2>
                     </div>
                 </a>
             </div>
             <div id="empty" style="background-image:url('<?=get_template_directory_uri()?>/assets/empties/Asset <?=rand(1,9)?>.svg');"></div>
+
+	        <?php
+                /** @var WP_Post $libraryArticle */
+                $libraryArticle = get_field('istaknuti_biblioteka');
+                if ($libraryArticle) :
+	        ?>
+                <div id="library">
+                    <div class="quote-wrapper">
+                        <?=get_field('opis_clanka_iz_biblioteke')?>
+                    </div>
+
+                    <a class="article-read-more" href="<?=get_the_permalink($libraryArticle)?>" title="NEP Biblioteka: <?=$libraryArticle->post_title?>">Pročitaj članak</a>
+                </div>
+            <?php endif; ?>
 
             <?php
                 /** @var WP_Post $featuredProgram */
