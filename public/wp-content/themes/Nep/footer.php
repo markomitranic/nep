@@ -8,9 +8,9 @@
             </div>
             <div class="details">
                 <h2>Contact</h2>
-                <a href="mailto:info@nep.rs">info@nep.rs</a>
+                <a href="mailto:office@novaiskra.com">office@novaiskra.com</a>
                 <a href="https://goo.gl/maps/Heep6rbsjN9yreVZ8" rel="nofollow" target="_blank" title="Open in Google Maps">
-                    Gavrila Principa 18, Beograd
+                    Gavrila Principa 43, Beograd
                 </a>
             </div>
         </div>

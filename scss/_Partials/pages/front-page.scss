@@ -299,6 +299,17 @@ body.home.page {
           &#media {
             background-color: #CBF574;
 
+            // Fixes for bad slider behavior wherein height would be set to auto.
+            .tns-outer {
+              height: 15vw;
+              .tns-inner {
+                height: 100%;
+                .tns-slider, .tns-gallery {
+                  height: 100%;
+                }
+              }
+            }
+
             a {
               display: block;
               height: 100%;
@@ -317,6 +328,8 @@ body.home.page {
                 background-position: center center;
                 background-repeat: no-repeat;
                 height: 15vw;
+                z-index: 0;
+                position: absolute;
 
                 @media (max-width: 580px) {
                   height: 40vw;

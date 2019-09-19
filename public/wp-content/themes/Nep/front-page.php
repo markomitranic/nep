@@ -24,32 +24,32 @@
             <div id="news">
                 <ul>
 	                <?php
-	                $latestPostsQuery = new WP_Query([
-		                'posts_per_page' => 6
-	                ]);
-	                $newsCounter = 1;
+                        $latestPostsQuery = new WP_Query([
+                            'posts_per_page' => 6
+                        ]);
+                        $newsCounter = 1;
 
-	                if ( $latestPostsQuery->have_posts() ) :
-		                while ( $latestPostsQuery->have_posts() ) :
-			                $latestPostsQuery->the_post();
-			                ?>
-                            <li>
-                                <a href="<?=get_the_permalink()?>" title="<?=get_the_title()?>">
-                                    <div class="image" style="background-image:url('<?=get_field('hero_image')['sizes']['medium']?>');">
-                                        <img src="<?=get_field('hero_image')['sizes']['medium']?>" alt="<?=get_field('hero_image')['alt']?>">
-                                    </div>
-                                    <div class="info">
-                                        <h2>Vesti</h2>
-                                        <p class="counter"><?=$newsCounter?>/6</p>
-                                        <p class="excerpt shouldShave" data-rows="3"><?=get_the_title()?></p>
-                                    </div>
-                                </a>
-                            </li>
-		                <?php
-			                $newsCounter++;
-		                endwhile;
-	                endif;
-	                wp_reset_postdata();
+                        if ( $latestPostsQuery->have_posts() ) :
+                            while ( $latestPostsQuery->have_posts() ) :
+                                $latestPostsQuery->the_post();
+                                ?>
+                                <li>
+                                    <a href="<?=get_the_permalink()?>" title="<?=get_the_title()?>">
+                                        <div class="image" style="background-image:url('<?=get_field('hero_image')['sizes']['medium']?>');">
+                                            <img src="<?=get_field('hero_image')['sizes']['medium']?>" alt="<?=get_field('hero_image')['alt']?>">
+                                        </div>
+                                        <div class="info">
+                                            <h2>Vesti</h2>
+                                            <p class="counter"><?=$newsCounter?>/6</p>
+                                            <p class="excerpt shouldShave" data-rows="3"><?=get_the_title()?></p>
+                                        </div>
+                                    </a>
+                                </li>
+                            <?php
+                                $newsCounter++;
+                            endwhile;
+                        endif;
+                        wp_reset_postdata();
 	                ?>
                 </ul>
             </div>
@@ -61,9 +61,32 @@
             </div>
             <div id="media">
                 <a href="/media/" title="Galerija media sadržaja za NEP programa">
-                    <div class="image" style="background-image:url('<?=get_template_directory_uri()?>/assets/temp/media-naslovna.jpg');">
-                        <img src="<?=get_template_directory_uri()?>/assets/temp/media-naslovna.jpg" alt="">
+                    <div class="slider-wrapper">
+                        <?php
+                            $galleryItems = get_field('gallery_content', 64);
+                            $randomGalleryImages = [];
+                            for ($i=6; $i > 0; $i--) {
+                                $randomKey = rand(0, count($galleryItems) - 1);
+                                if (array_key_exists($randomKey, $randomGalleryImages)) {
+                                    continue;
+                                }
+
+                                $item = $galleryItems[$randomKey];
+                                if ($item['acf_fc_layout'] !== 'picture') {
+                                    $i++;
+                                    continue;
+                                }
+                                $randomGalleryImages[$randomKey] = $item['image'];
+                            }
+
+                            foreach ( $randomGalleryImages as $image ) :
+                        ?>
+                            <div class="image" style="background-image:url('<?=$image['sizes']['thumbnail']?>');">
+                                <img src="<?=$image['sizes']['medium']?>" alt="<?=$image['alt']?>">
+                            </div>
+                        <?php endforeach; ?>
                     </div>
+
                     <div class="info">
                         <h2>Media</h2>
                     </div>
