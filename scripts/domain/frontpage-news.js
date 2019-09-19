@@ -3,7 +3,7 @@ import {tns} from 'tiny-slider/src/tiny-slider';
 const frontpageNewsSlider = {
     $newsSlider: null,
     transitionSpeed: 500,
-    slideDuration: 1000,
+    slideDuration: 4000,
     slider: null,
 
     init: function() {

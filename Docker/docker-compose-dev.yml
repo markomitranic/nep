@@ -19,7 +19,7 @@ services:
       - mysql
     networks:
       - nep
-
+w
   php:
     container_name: nep_php
     restart: always
@@ -27,6 +27,8 @@ services:
       context: ./php-fpm
       dockerfile: Dockerfile
       target: dev
+      args:
+        - XDEBUG_ACTIVE=${XDEBUG_ACTIVE}
     volumes:
       - nep-project:/usr/share/nginx/html:nocopy
     entrypoint: /usr/share/nginx/entrypoint.sh

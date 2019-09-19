@@ -1,4 +1,4 @@
-FROM php:7.3-fpm AS base
+FROM php:7.3-fpm AS prod
 
 RUN apt-get update
 RUN apt-get install nano -y
@@ -27,16 +27,24 @@ WORKDIR /usr/share/nginx/html
 
 COPY conf/php-fpm.conf /usr/local/etc/php-fpm.d/zzz-nep-fpm.conf
 COPY conf/php.ini /usr/local/etc/php/conf.d/nep-php.ini
+COPY conf/opcache.ini /usr/local/etc/php/conf.d/opcache.ini
+RUN echo "opcache.enable=1" >> /usr/local/etc/php/conf.d/opcache.ini \
+    && echo "opcache.enable_cli=1" >> /usr/local/etc/php/conf.d/opcache.ini
 
 COPY entrypoint.sh /usr/share/nginx/entrypoint.sh
 RUN ["chmod", "+x", "/usr/share/nginx/entrypoint.sh"]
 
-FROM base AS prod
-
-FROM base AS dev
-
-RUN yes | pecl install xdebug-2.7.0beta1
-#RUN echo "zend_extension=$(find /usr/local/lib/php/extensions/ -name xdebug.so)" > /usr/local/etc/php/conf.d/xdebug.ini \
-#    && echo "xdebug.remote_enable=on" >> /usr/local/etc/php/conf.d/xdebug.ini \
-#    && echo "xdebug.remote_autostart=on" >> /usr/local/etc/php/conf.d/xdebug.ini \
-#    && echo "xdebug.remote_host=host.docker.internal" >> /usr/local/etc/php/conf.d/xdebug.ini
+FROM prod AS dev
+RUN echo "opcache.enable=0" >> /usr/local/etc/php/conf.d/opcache.ini \
+    && echo "opcache.enable_cli=0" >> /usr/local/etc/php/conf.d/opcache.ini
+ARG XDEBUG_ACTIVE
+ENV XDEBUG_ACTIVE=${XDEBUG_ACTIVE}
+RUN if [ "$XDEBUG_ACTIVE" -eq 1 ] ; then \
+        yes | pecl install xdebug \
+        && PHP_IDE_CONFIG="serverName=nep.rs" \
+        && echo "zend_extension=xdebug.so" >> /usr/local/etc/php/conf.d/xdebug.ini \
+        && echo "xdebug.remote_enable=on" >> /usr/local/etc/php/conf.d/xdebug.ini \
+        && echo "xdebug.remote_autostart=on" >> /usr/local/etc/php/conf.d/xdebug.ini \
+        && echo "xdebug.remote_host=host.docker.internal" >> /usr/local/etc/php/conf.d/xdebug.ini \
+        && echo "xdebug.idekey=KAPUTT-DEBUG" >> /usr/local/etc/php/conf.d/xdebug.ini \
+    ; fi
