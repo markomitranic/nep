@@ -5,10 +5,6 @@
     <?php get_template_part('partials/sidebar'); ?>
 	<main>
 
-        <div id="intro">
-            <p>Jednogodišnji interdisciplinarni eksperimentalni obrazovni program za studente različitih fakulteta utemeljen na principima saradnje, timskog rada, dijaloga, razmene, otvorenosti i povezivanja različitih znanja, veština i kapaciteta.</p>
-        </div>
-
         <div id="funnel-blocks">
             <div id="news">
                 <ul>

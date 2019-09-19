@@ -9,7 +9,7 @@
 		</div>
 		<div id="page-title">
             <p>Program</p>
-            <div id="categories">
+            <div id="subnav">
                 <ul>
 					<?php
 					/** @var WP_Term[] $categories */
@@ -130,7 +130,9 @@
                         <li class="moderator">
                             <div class="portrait">
                                 <?php if ($portrait = get_field('photo', $moderator->ID)) : ?>
-                                    <img src="<?=$portrait['sizes']['medium']?>" alt="<?=$portrait['alt']?>">
+                                    <div class="image" style="background-image: url('<?=$portrait['sizes']['medium']?>');">
+                                        <img src="<?=$portrait['sizes']['medium']?>" alt="<?=$portrait['alt']?>">
+                                    </div>
                                 <?php endif; ?>
                                 <h3>
                                     <a href="<?=get_the_permalink($moderator->ID)?>", title="Pregled profila <?=$moderator->post_title ?>">

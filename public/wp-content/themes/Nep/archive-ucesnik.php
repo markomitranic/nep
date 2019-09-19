@@ -28,7 +28,7 @@
                 }
             ?>
             <h1><?=$pageTitle?></h1>
-			<div id="neps">
+			<div id="subnav">
 				<ul>
 					<?php
 					/** @var WP_Term[] $categories */

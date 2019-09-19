@@ -1,51 +1,21 @@
 body.home.page {
   #content {
     main {
-      #intro {
-        padding: 37px 80px;
-        border-bottom: 2px solid black;
-
-        @media (max-width: 1150px) {
-          padding: 25px 40px;
-        }
-        @media (max-width: 1150px) {
-          padding: 15px 20px;
-        }
-
-
-        p {
-          font-style: normal;
-          font-weight: normal;
-          font-size: 24px;
-          line-height: 38px;
-          margin: 0 auto;
-
-          @media (max-width: 1150px) {
-            font-size: 20px;
-            line-height: 28px;
-          }
-          @media (max-width: 1150px) {
-            font-size: 18px;
-            line-height: 26px;
-          }
-          @media (max-width: 680px) {
-            font-size: 16px;
-            line-height: 24px;
-          }
-        }
-      }
       #funnel-blocks {
-        padding: 40px;
+        padding: 25px;
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
         align-items: stretch;
 
         @media (max-width: 1150px) {
+          padding: 15px;
+        }
+        @media (max-width:820px) {
           padding: 20px;
         }
-        @media (max-width: 640px) {
-          padding: 10px;
+        @media (max-width:700px) {
+          padding: 15px;
         }
 
         & > div {

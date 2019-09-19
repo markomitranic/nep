@@ -16,7 +16,7 @@
 		</div>
 		<div id="page-title">
             <h1>Biblioteka</h1>
-			<div id="neps">
+			<div id="subnav">
 				<ul>
 					<?php
 					/** @var WP_Term[] $categories */

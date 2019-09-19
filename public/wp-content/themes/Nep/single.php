@@ -9,7 +9,7 @@
 		</div>
 		<div id="page-title">
 			<p>Vesti</p>
-			<div id="years">
+			<div id="subnav">
 				<ul>
 					<?php wp_get_archives('type=yearly'); ?>
 				</ul>

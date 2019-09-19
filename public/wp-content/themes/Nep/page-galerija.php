@@ -15,7 +15,7 @@ get_header();
 		</div>
 		<div id="page-title">
             <h1><?php the_title(); ?></h1>
-            <div id="neps">
+            <div id="subnav">
                 <ul>
 					<?php
 					/** @var WP_Term[] $categories */
@@ -109,11 +109,13 @@ get_header();
                             <a href="<?=$contentItem['image']['url']?>" target="_blank" title="Otvori u novom tabu">
                                 <div class="wrapper">
                                     <img src="<?=$contentItem['image']['sizes']['medium']?>" alt="<?=$contentItem['image']['alt']?>">
+                                    <p>#NEP2 - Ekskurzija</p>
                                 </div>
                             </a>
                         <?php elseif ($contentItem['acf_fc_layout'] === 'embed_youtube_vimeo') : ?>
                             <div class="video-wrapper">
                                 <?=$contentItem['embed_url']?>
+                                <p>#NEP2 - Ekskurzija</p>
                             </div>
                         <?php endif; ?>
                     </li>
