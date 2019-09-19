@@ -1,7 +1,4 @@
 <aside>
-	<div class="description">
-		<p><?= get_bloginfo('description'); ?></p>
-	</div>
 	<div class="sidebar">
 		<ul>
 			<?php

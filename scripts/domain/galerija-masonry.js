@@ -25,7 +25,6 @@ const GalerijaMasonry = {
                     )
                 );
             });
-            console.log(this.$masonryInstances);
         });
     },
 

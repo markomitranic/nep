@@ -32,7 +32,7 @@ if (array_key_exists('tip_participacije', $_REQUEST)) {
                 }
 	        ?>
             <p><?=$participationTypePageTitle?></p>
-            <div id="categories">
+            <div id="subnav">
                 <ul>
 		            <?php
                         /** @var WP_Term[] $categories */
@@ -83,7 +83,9 @@ if (array_key_exists('tip_participacije', $_REQUEST)) {
         <div id="bio">
             <div class="portrait">
                 <?php if ($portrait = get_field('photo')) : ?>
-                    <img src="<?=$portrait['sizes']['medium']?>" alt="<?=$portrait['alt']?>">
+                    <div class="image" style="background-image: url('<?=$portrait['sizes']['medium']?>');">
+                        <img src="<?=$portrait['sizes']['medium']?>" alt="<?=$portrait['alt']?>">
+                    </div>
                 <?php endif; ?>
                 <h1><?php the_title(); ?></h1>
                 <?php if ($jobTitle = get_field('title')) : ?>

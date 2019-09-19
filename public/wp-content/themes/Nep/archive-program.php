@@ -9,7 +9,7 @@
 		</div>
 		<div id="page-title">
             <h1>Program</h1>
-			<div id="categories">
+			<div id="subnav">
 				<ul>
                     <?php
                         /** @var WP_Term[] $categories */
