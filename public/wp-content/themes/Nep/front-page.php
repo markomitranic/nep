@@ -1,5 +1,20 @@
 <?php get_header(); ?>
-<?php get_template_part('partials/masthead'); ?>
+
+<div id="masthead">
+    <div class="wrapper">
+        <div id="logo">
+            <a href="<?php echo home_url(); ?>" title="Go to the front page">
+				<?=file_get_contents(get_template_directory() . '/assets/global/NEP Logo.svg')?>
+            </a>
+        </div>
+        <div id="page-title" class="flashing misli-buducnost-visible">
+            <div class="misli-buducnost">
+	            <?=file_get_contents(get_template_directory() . '/assets/global/frontpage-hero.svg')?>
+            </div>
+            <h1><?=get_the_title()?></h1>
+        </div>
+    </div>
+</div>
 
 <div id="content">
     <?php get_template_part('partials/sidebar'); ?>

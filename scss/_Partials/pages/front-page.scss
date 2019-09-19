@@ -1,4 +1,60 @@
 body.home.page {
+  #masthead {
+    #page-title {
+      height: 330px;
+      box-sizing: border-box;
+
+      @media (max-width: 690px) {
+        height: 270px;
+      }
+
+      &.misli-buducnost-visible {
+        @media (min-width: 930px) {
+          padding: 30px 80px;
+        }
+
+        .misli-buducnost {
+          display: block;
+          height: 100%;
+        }
+        h1 {
+          display: none;
+        }
+      }
+
+      .misli-buducnost {
+        display: none;
+
+        svg {
+          width: auto;
+          height: 100%;
+          max-width: 100%;
+
+          .clip1 {
+            animation: pulsate-bck 2s ease-in-out infinite both;
+          }
+          .clip2 {
+            animation: pulsate-bck 4s ease-in-out infinite both;
+          }
+          .clip3 {
+            animation: pulsate-bck 3s ease-in-out infinite both;
+          }
+          @keyframes pulsate-bck {
+            0% {
+              transform: scale(1);
+            }
+            50% {
+              transform: scale(0.98);
+            }
+            100% {
+              transform: scale(1);
+            }
+          }
+        }
+      }
+    }
+  }
+
   #content {
     main {
       #funnel-blocks {
