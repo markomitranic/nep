@@ -17,7 +17,7 @@
 					foreach ($categories as $category) :
 						$isActive = (array_key_exists('nep', $_REQUEST) && $category->slug === $_REQUEST['nep']) ? true : false;
 						?>
-                        <li <?=($isActive) ? 'class="active"' : ''?>><a href="/biblioteka/?nep<?=$category->slug?>"><?=$category->name?></a></li>
+                        <li <?=($isActive) ? 'class="active"' : ''?>><a href="/biblioteka/?nep=<?=$category->slug?>"><?=$category->name?></a></li>
 					<?php endforeach; ?>
                 </ul>
             </div>
