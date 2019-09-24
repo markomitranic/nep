@@ -671,6 +671,8 @@ body #header {
             margin: 0 10px; }
           #masthead > .wrapper #page-title #subnav ul li:nth-last-child(1):after {
             display: none; }
+          #masthead > .wrapper #page-title #subnav ul li.active a {
+            text-decoration: underline; }
           #masthead > .wrapper #page-title #subnav ul li a {
             color: black;
             text-decoration: none; }
