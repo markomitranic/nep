@@ -24,7 +24,31 @@ const GalerijaMasonry = {
                         }
                     )
                 );
+
+                this.addImageLoadListeners($masonryContainer);
             });
+        });
+    },
+
+    addImageLoadListeners: function($masonryContainer) {
+        const $images = $masonryContainer.querySelectorAll('img');
+
+        $images.forEach(($image) => {
+            if ($image.complete) {
+                GalerijaMasonry.repositionAllMasonries();
+            } else {
+                $image.addEventListener('load', GalerijaMasonry.repositionAllMasonries);
+            }
+        });
+    },
+
+    imageLoadHandler: function() {
+        GalerijaMasonry.repositionAllMasonries();
+    },
+
+    repositionAllMasonries: function() {
+        GalerijaMasonry.$masonryInstances.forEach((instance) => {
+            instance.layout();
         });
     },
 
