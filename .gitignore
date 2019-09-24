@@ -1,6 +1,4 @@
 node_modules
-/public/wp-content/themes/Nep/css
-/public/wp-content/themes/Nep/js
 /public/wp-content/uploads/cache/*
 
 wp-config.php
