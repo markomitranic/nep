@@ -1423,7 +1423,19 @@ body.home.page #content main #funnel-blocks {
         font-weight: normal;
         font-size: 28px;
         line-height: 50px;
-        text-align: center; }
+        text-align: center;
+        max-width: 680px;
+        width: 70%;
+        margin: 50px auto 20px auto; }
+        @media (max-width: 940px) {
+          body.home.page #content main #funnel-blocks > div#library .quote-wrapper {
+            font-size: 22px;
+            line-height: 28px; } }
+        @media (max-width: 530px) {
+          body.home.page #content main #funnel-blocks > div#library .quote-wrapper {
+            font-size: 18px;
+            line-height: 24px;
+            width: 90%; } }
       body.home.page #content main #funnel-blocks > div#library .article-read-more {
         display: block;
         text-align: right;
