@@ -1152,6 +1152,8 @@ body.home.page #masthead #page-title {
     transform: scale(0.98); }
   100% {
     transform: scale(1); } }
+  body.home.page #masthead #page-title h1 {
+    text-transform: none; }
 
 body.home.page #content main #funnel-blocks {
   padding: 25px;
