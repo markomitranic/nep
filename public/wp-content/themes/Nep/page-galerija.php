@@ -110,10 +110,12 @@ get_header();
                                 <div class="wrapper">
                                     <img src="<?=$contentItem['image']['sizes']['medium']?>" alt="<?=$contentItem['image']['alt']?>">
                                     <?php
-                                        $label = '#';
+                                        $label = '';
+                                        $programColor = '#ffb6b6';
                                         $nep = get_term($contentItem['nep']);
                                         if ($nep) {
-                                            $label .= $nep->name;
+                                            $label .= '#' . $nep->name;
+	                                        $programColor = get_field('color', $nep->taxonomy . '_' . $nep->term_id);
                                         }
 
                                         $activity = get_term($contentItem['vrsta_aktivnosti']);
@@ -121,7 +123,7 @@ get_header();
                                             $label .= ' - ' . $activity->name;
                                         }
                                     ?>
-                                    <p><?=$label?></p>
+                                    <p style="background-color:<?=$programColor?>;"><?=$label?></p>
                                 </div>
                             </a>
                         <?php elseif ($contentItem['acf_fc_layout'] === 'embed_youtube_vimeo') : ?>

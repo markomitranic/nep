@@ -53,12 +53,16 @@
 	                ?>
                 </ul>
             </div>
+
             <div id="programs">
                 <a href="/program/" title="NEP Programski sadržaji">
                     <h2>Program</h2>
                     <p>radionica / predavanje prezentacija / poseta / mentorska sesija / finalni događaj / ekskurzija</p>
                 </a>
             </div>
+
+            <div id="empty" style="background-image:url('<?=get_template_directory_uri()?>/assets/empties/Asset <?=rand(1,9)?>.svg');"></div>
+
             <div id="media">
                 <a href="/media/" title="Galerija media sadržaja za NEP programa">
                     <div class="slider-wrapper">
@@ -81,7 +85,7 @@
 
                             foreach ( $randomGalleryImages as $image ) :
                         ?>
-                            <div class="image" style="background-image:url('<?=$image['sizes']['thumbnail']?>');">
+                            <div class="image" style="background-image:url('<?=$image['sizes']['medium']?>');">
                                 <img src="<?=$image['sizes']['medium']?>" alt="<?=$image['alt']?>">
                             </div>
                         <?php endforeach; ?>
@@ -92,7 +96,6 @@
                     </div>
                 </a>
             </div>
-            <div id="empty" style="background-image:url('<?=get_template_directory_uri()?>/assets/empties/Asset <?=rand(1,9)?>.svg');"></div>
 
 	        <?php
                 /** @var WP_Post $libraryArticle */

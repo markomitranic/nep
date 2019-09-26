@@ -29,10 +29,15 @@
                 if (!empty($categories)) :
             ?>
             <ul id="category-list">
-                <?php foreach ($categories as $category) : ?>
+                <?php
+                    foreach ($categories as $category) :
+                        if ($category->term_id === 1) { continue; }
+                ?>
                 <li>
 	                <?php
 	                    $categoryName = null;
+
+	                    dump($categories, true, true);
 
                         if (!($categoryLink = get_category_link($category->term_id))) {
 	                        $categoryLink = null;

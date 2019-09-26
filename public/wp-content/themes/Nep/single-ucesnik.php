@@ -97,7 +97,12 @@ if (array_key_exists('tip_participacije', $_REQUEST)) {
 
                 <?php if ($links = get_field('linkovi')) : ?>
                     <ul class="links">
-                        <?php foreach ($links as $link) : ?>
+                        <?php
+                            foreach ($links as $link) :
+                                if (filter_var($link['url'], FILTER_VALIDATE_EMAIL)) {
+                                    $link['url'] = 'mailto://' . $link['url'];
+                                }
+                        ?>
                             <li>
                                 <a href="<?=$link['url']?>" target="_blank" rel="nofollow"><?=$link['label']?></a>
                             </li>
@@ -110,7 +115,7 @@ if (array_key_exists('tip_participacije', $_REQUEST)) {
             if (isParticipationType($post->ID, 'alumni') && !isParticipationType($post->ID, 'mentor')) :
                 /** @var WP_Term[] $skills */
                 $skills = get_the_terms($post->ID, 'vestine');
-                if (!empty($nepPrograms)) :
+                if (!empty($nepPrograms) && $skills !== false) :
         ?>
             <div id="skills">
                 <h2>Veštine</h2>
