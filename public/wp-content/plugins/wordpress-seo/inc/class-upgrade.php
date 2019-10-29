@@ -137,6 +137,14 @@ class WPSEO_Upgrade {
 			$this->clean_all_notifications();
 		}
 
+		if ( version_compare( $version, '12.3-RC0', '<' ) ) {
+			$this->upgrade_123();
+		}
+
+		if ( version_compare( $version, '12.4-RC0', '<' ) ) {
+			$this->upgrade_124();
+		}
+
 		// Since 3.7.
 		$upsell_notice = new WPSEO_Product_Upsell_Notice();
 		$upsell_notice->set_upgrade_notice();
@@ -684,6 +692,36 @@ class WPSEO_Upgrade {
 		if ( ! in_array( $company_or_person, array( 'company', 'person' ), true ) ) {
 			WPSEO_Options::set( 'company_or_person', 'company' );
 		}
+	}
+
+	/**
+	 * Performs the 12.3 upgrade.
+	 *
+	 * Removes the about notice when its still in the database.
+	 */
+	private function upgrade_123() {
+		$plugins = array(
+			'yoast-seo-premium',
+			'video-seo-for-wordpress-seo-by-yoast',
+			'yoast-news-seo',
+			'local-seo-for-yoast-seo',
+			'yoast-woocommerce-seo',
+			'yoast-acf-analysis',
+		);
+
+		$center = Yoast_Notification_Center::get();
+		foreach ( $plugins as $plugin ) {
+			$center->remove_notification_by_id( 'wpseo-outdated-yoast-seo-plugin-' . $plugin );
+		}
+	}
+
+	/**
+	 * Performs the 12.4 upgrade.
+	 *
+	 * Removes the Google plus defaults from the database.
+	 */
+	private function upgrade_124() {
+		$this->cleanup_option_data( 'wpseo_social' );
 	}
 
 	/**
