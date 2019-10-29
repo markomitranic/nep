@@ -8,7 +8,6 @@ function gracefulShutdown ()
 	printf  "%40s\n" "${blue} Pressing Ctrl+C combination again is NOT recommended.${normal}"
 	printf  "%40s\n" "${yellow} [SIGINT 2] Stopping all containers. Please wait... ${normal}"
     docker-compose -f docker-compose-dev.yml down
-    docker-sync stop
     exit 2
 }
 
@@ -19,7 +18,6 @@ trap "gracefulShutdown" 2
 docker-compose -f docker-compose-dev.yml down
 
 # # Start anew
-docker-sync start
 docker-compose  -f docker-compose-dev.yml build
 docker-compose -f docker-compose-dev.yml up --remove-orphans
 

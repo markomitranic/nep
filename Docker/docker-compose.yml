@@ -10,7 +10,7 @@ services:
       target: prod
     restart: always
     volumes:
-      - ./../public/:/usr/share/nginx/html:ro
+      - nep-project:/app/nep:ro
     ports:
       - ${HTTP_PORT}:80
       - ${HTTPS_PORT}:443
@@ -28,8 +28,8 @@ services:
       dockerfile: Dockerfile
       target: prod
     volumes:
-      - ./../public/:/usr/share/nginx/html:delegated
-    entrypoint: /usr/share/nginx/entrypoint.sh
+      - nep-project:/app/nep:delegated
+    entrypoint: /app/entrypoint.sh
     depends_on:
       - mysql
     networks:
@@ -57,13 +57,22 @@ services:
       dockerfile: Dockerfile
       target: prod
     volumes:
-      - ./../:/home/node/app:delegated
-    working_dir: /home/node/app
-    entrypoint: /home/node/entrypoint.sh
+      - nep-project:/app/nep:delegated
+      - /app/nep/node_modules # Ignore
+    working_dir: /app/nep
+    entrypoint: /app/entrypoint.sh
     environment:
       - NODE_ENV=prod
     networks:
       - nep
+
+volumes:
+  nep-project:
+    driver: local
+    driver_opts:
+      type: none
+      device: ${PWD}/../
+      o: bind
 
 networks:
   nep:

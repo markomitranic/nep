@@ -31,8 +31,8 @@ COPY conf/opcache.ini /usr/local/etc/php/conf.d/opcache.ini
 RUN echo "opcache.enable=1" >> /usr/local/etc/php/conf.d/opcache.ini \
     && echo "opcache.enable_cli=1" >> /usr/local/etc/php/conf.d/opcache.ini
 
-COPY entrypoint.sh /usr/share/nginx/entrypoint.sh
-RUN ["chmod", "+x", "/usr/share/nginx/entrypoint.sh"]
+COPY entrypoint.sh /app/entrypoint.sh
+RUN ["chmod", "+x", "/app/entrypoint.sh"]
 
 FROM prod AS dev
 RUN echo "opcache.enable=0" >> /usr/local/etc/php/conf.d/opcache.ini \
@@ -46,5 +46,5 @@ RUN if [ "$XDEBUG_ACTIVE" -eq 1 ] ; then \
         && echo "xdebug.remote_enable=on" >> /usr/local/etc/php/conf.d/xdebug.ini \
         && echo "xdebug.remote_autostart=on" >> /usr/local/etc/php/conf.d/xdebug.ini \
         && echo "xdebug.remote_host=host.docker.internal" >> /usr/local/etc/php/conf.d/xdebug.ini \
-        && echo "xdebug.idekey=KAPUTT-DEBUG" >> /usr/local/etc/php/conf.d/xdebug.ini \
+        && echo "xdebug.idekey=NEP-DEBUG" >> /usr/local/etc/php/conf.d/xdebug.ini \
     ; fi
