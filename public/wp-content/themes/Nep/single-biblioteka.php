@@ -65,11 +65,21 @@
 		</div>
 
 		<?php
+		    /** @var string $manualAuthorName */
+		    $manualAuthorName = get_field('autor');
+
+		    if (!empty($manualAuthorName)) :
+		?>
+            <div id="author">
+                <h2>Autor: <?=$manualAuthorName ?></h2>
+            </div>
+        <?php endif; ?>
+
+		<?php
             /** @var WP_Post $authorParticipant */
             $author = get_field('autor-mentor');
-		    if (!is_null($author)) :
+		    if ($author) :
 		?>
-
             <div id="author">
                 <h2>Autor:</h2>
                 <div class="wrapper">
@@ -103,6 +113,7 @@
                 </div>
             </div>
         <?php endif; ?>
+
 	</main>
 </div>
 
